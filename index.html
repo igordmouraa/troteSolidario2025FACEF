@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/images/trote.jpg" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Uni-FACEF | Trote solidário 2025</title>
+    <script>
+        // Função para alternar o menu hambúrguer
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+</head>
+<body class="bg-gray-100 font-sans">
+    <!-- Barra de navegação -->
+    <nav class="bg-blue-600 shadow-sm">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- Logo e Foto do Trote -->
+            <div class="flex-1 flex items-center gap-4">
+                <img src="/assets/images/trote.jpg" alt="Trote Solidário" class="w-12 h-12 rounded-lg">
+                <a href="/" class="text-xl font-bold text-white hover:text-gray-200">Uni-FACEF | Trote solidário 2025</a>
+            </div>
+
+            <!-- Botão do menu hambúrguer (visível apenas em mobile) -->
+            <button id="menu-button" class="text-white focus:outline-none lg:hidden" onclick="toggleMenu()">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+
+            <!-- Links do menu (visíveis apenas em desktop) -->
+            <div id="links-menu" class="hidden lg:flex lg:gap-6 lg:items-center">
+                <a href="/" class="text-white hover:text-gray-200 transition duration-300">Home</a>
+                <a href="/html/pages/introducao.html" class="text-white hover:text-gray-200 transition duration-300">Introdução</a>
+                <a href="/html/pages/objetivo.html" class="text-white hover:text-gray-200 transition duration-300">Objetivo</a>
+                <a href="/html/pages/formato.html" class="text-white hover:text-gray-200 transition duration-300">Formato</a>
+                <a href="/html/pages/gincana.html" class="text-white hover:text-gray-200 transition duration-300">Gincana</a>
+                <a href="/html/pages/integracao.html" class="text-white hover:text-gray-200 transition duration-300">Integração</a>
+                <a href="/html/pages/observacoes.html" class="text-white hover:text-gray-200 transition duration-300">Observações</a>
+            </div>
+        </div>
+
+        <!-- Menu vertical para mobile -->
+        <div id="mobile-menu" class="lg:hidden hidden bg-blue-600">
+            <div class="flex flex-col px-4 py-2">
+                <a href="/" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Home</a>
+                <a href="/html/pages/introducao.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Introdução</a>
+                <a href="/html/pages/objetivo.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Objetivo</a>
+                <a href="/html/pages/formato.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Formato</a>
+                <a href="/html/pages/gincana.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Gincana</a>
+                <a href="/html/pages/integracao.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Integração</a>
+                <a href="/html/pages/observacoes.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Observações</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Conteúdo principal -->
+    <div class="container mx-auto my-8 px-4">
+        <h1 class="text-3xl font-bold text-gray-800 mb-4">Bem-vindo ao Trote Solidário 2025</h1>
+        <p class="text-gray-600">Construa vitórias fora de campo e jogue pela solidariedade.</p>
+
+        <!-- Seção de Destaque -->
+        <div class="mt-8 bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">O que é o Trote Solidário?</h2>
+            <p class="text-gray-600 mb-4">O Trote Solidário é uma iniciativa da Uni-FACEF que visa promover a integração entre calouros e veteranos através de ações sociais e atividades que beneficiam a comunidade. Em 2025, o tema será "Construa vitórias fora de campo e jogue pela solidariedade".</p>
+            <a href="/html/pages/introducao.html" class="text-blue-600 hover:text-blue-800 font-semibold">Saiba mais →</a>
+        </div>
+
+        <!-- Seção de Atividades -->
+        <div class="mt-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">Atividades do Trote</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Gincana Solidária</h3>
+                    <p class="text-gray-600">Participe de desafios divertidos e competitivos que ajudam a arrecadar recursos para instituições carentes.</p>
+                    <a href="/html/pages/gincana.html" class="text-blue-600 hover:text-blue-800 font-semibold">Detalhes →</a>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Integração</h3>
+                    <p class="text-gray-600">Atividades que promovem a interação entre calouros e veteranos, criando laços de amizade e colaboração.</p>
+                    <a href="/html/pages/integracao.html" class="text-blue-600 hover:text-blue-800 font-semibold">Detalhes →</a>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Doações</h3>
+                    <p class="text-gray-600">Arrecadação de alimentos, roupas e materiais escolares para comunidades carentes da região.</p>
+                    <a href="/html/pages/formato.html" class="text-blue-600 hover:text-blue-800 font-semibold">Detalhes →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Seção de Depoimentos -->
+        <div class="mt-8 bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">Depoimentos</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <p class="text-gray-600 italic">"Participar do Trote Solidário foi uma experiência incrível. Além de me integrar à faculdade, pude ajudar muitas pessoas."</p>
+                    <p class="text-gray-800 font-semibold mt-2">- Ana, estudante de Direito</p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <p class="text-gray-600 italic">"O Trote Solidário mudou minha visão sobre a faculdade. Foi muito mais do que eu esperava, uma experiência enriquecedora."</p>
+                    <p class="text-gray-800 font-semibold mt-2">- João, estudante de Engenharia</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Seção de Call to Action -->
+        <div class="mt-8 text-center bg-blue-600 p-8 rounded-lg shadow-md">
+            <h2 class="text-2xl font-bold text-white mb-4">Participe do Trote Solidário 2025!</h2>
+            <p class="text-gray-200 mb-4">Junte-se a nós e faça a diferença na vida de quem mais precisa. Sua participação é fundamental para o sucesso deste evento.</p>
+            <a href="/html/pages/observacoes.html" class="bg-white text-blue-600 px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition duration-300">Saiba como participar</a>
+        </div>
+    </div>
+</body>
+</html>

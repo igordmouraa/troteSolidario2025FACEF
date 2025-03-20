@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../assets/images/trote.jpg" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Uni-FACEF | Observações</title>
+    <script>
+        // Função para alternar o menu hambúrguer
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+</head>
+<body class="bg-gray-100 font-sans">
+    <!-- Barra de navegação -->
+    <nav class="bg-blue-600 shadow-sm">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- Logo e Foto do Trote -->
+            <div class="flex-1 flex items-center gap-4">
+                <img src="/assets/images/trote.jpg" alt="Trote Solidário" class="w-12 h-12 rounded-lg">
+                <a href="/" class="text-xl font-bold text-white hover:text-gray-200">Uni-FACEF | Trote solidário 2025</a>
+            </div>
+
+            <!-- Botão do menu hambúrguer (visível apenas em mobile) -->
+            <button id="menu-button" class="text-white focus:outline-none lg:hidden" onclick="toggleMenu()">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+
+            <!-- Links do menu (visíveis apenas em desktop) -->
+            <div id="links-menu" class="hidden lg:flex lg:gap-6 lg:items-center">
+                <a href="/" class="text-white hover:text-gray-200 transition duration-300">Home</a>
+                <a href="/html/pages/introducao.html" class="text-white hover:text-gray-200 transition duration-300">Introdução</a>
+                <a href="/html/pages/objetivo.html" class="text-white hover:text-gray-200 transition duration-300">Objetivo</a>
+                <a href="/html/pages/formato.html" class="text-white hover:text-gray-200 transition duration-300">Formato</a>
+                <a href="/html/pages/gincana.html" class="text-white hover:text-gray-200 transition duration-300">Gincana</a>
+                <a href="/html/pages/integracao.html" class="text-white hover:text-gray-200 transition duration-300">Integração</a>
+                <a href="/html/pages/observacoes.html" class="text-white hover:text-gray-200 transition duration-300">Observações</a>
+                        </div>
+        </div>
+
+        <!-- Menu vertical para mobile -->
+        <div id="mobile-menu" class="lg:hidden hidden bg-blue-600">
+            <div class="flex flex-col px-4 py-2">
+                <a href="/" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Home</a>
+                <a href="/html/pages/introducao.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Introdução</a>
+                <a href="/html/pages/objetivo.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Objetivo</a>
+                <a href="/html/pages/formato.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Formato</a>
+                <a href="/html/pages/gincana.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Gincana</a>
+                <a href="/html/pages/integracao.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Integração</a>
+                <a href="/html/pages/observacoes.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Observações</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Conteúdo principal -->
+    <div class="container mx-auto my-8 px-4">
+        <!-- Seção 1: Observações Gerais -->
+        <section class="bg-white rounded-lg shadow-sm p-6 mb-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">Observações Gerais</h2>
+            <ol class="list-decimal list-inside text-gray-700">
+                <li class="mb-4">
+                    Na noite de encerramento, é obrigatória a presença dos estudantes, vinculada à emissão de certificado de participação na gincana TROTE SOLIDÁRIO Uni-FACEF 2025.
+                </li>
+                <li class="mb-4">
+                    É proibido pedir donativos em dinheiro em nome específico do Hospital do Câncer ou de alguma entidade filantrópica. Deve-se informar que a doação é destinada ao TROTE SOLIDÁRIO Uni-FACEF 2025. Em caso de necessidade de ofício, procurar a Coordenação em cada uma das Unidades.
+                </li>
+                <li class="mb-4">
+                    É vedado o uso de Apitos, Buzinas e demais apetrechos que emitam sons excessivos durante a execução das provas da noite de encerramento, além de efeitos pirotécnicos em qualquer momento, sob pena de perda de pontos.
+                </li>
+                <li class="mb-4">
+                    Os Resultados das arrecadações da 1ª Etapa serão distribuídos entre as Entidades que enviarem ofício ao Uni-FACEF, priorizando a ordem de chegada, com exceção dos suplementos que serão direcionados aos Voluntários da Saúde.
+                </li>
+                <li class="mb-4">
+                    Na prova de Doações de Sangue, o objetivo é fomentar novas doações a partir do Trote Solidário, nesta perspectiva, serão penalizadas ações de abordagem a doadores que já estejam no hemocentro (ou chegando) para doação.
+                </li>
+                <li class="mb-4">
+                    Os casos omissos ao presente Regulamento serão avaliados pela Comissão Organizadora.
+                </li>
+            </ol>
+        </section>
+
+        <!-- Seção 2: Coordenação 2025 -->
+        <section class="bg-white rounded-lg shadow-sm p-6 mb-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">Coordenação 2025</h2>
+            <p class="text-gray-700 mb-4">
+                Para mais informações, entre em contato com a Coordenação do Trote Solidário:
+            </p>
+            <ul class="list-disc list-inside text-gray-700">
+                <li class="mb-2">
+                    <strong>Email:</strong> trotesolidario@facef.br
+                </li>
+                <li class="mb-2">
+                    <strong>Prof. Dr. José Alfredo de Pádua Guerra – Reitor:</strong> reitoria@facef.br
+                </li>
+                <li class="mb-2">
+                    <strong>Profa. Dra. Melissa Franchini C. Bandos – Pró-Reitora de Extensão Com. e Desenv.:</strong> melissa@facef.br
+                </li>
+                <li class="mb-2">
+                    <strong>Prof. Dr. Alfredo José Machado Neto – Pró-Reitor de Administração:</strong> josealfredo@facef.br
+                </li>
+                <li class="mb-2">
+                    <strong>Profa. Ma. Flávia Haddad França – Coordenadora de Extensão:</strong> flaviahaddad@facef.br
+                </li>
+                <li class="mb-2">
+                    <strong>Profa. Ma. Alba Penteado – Coordenadora de Marketing:</strong> alba@facef.br
+                </li>
+                <li class="mb-2">
+                    <strong>Me. Welton Roberto Silva – Procurador Institucional:</strong> welton@facef.br
+                </li>
+                <li class="mb-2">
+                    <strong>Me. Lucas Antônio Santos – Setor de Eventos:</strong> lucas@facef.br
+                </li>
+            </ul>
+        </section>
+    </div>
+</body>
+</html>

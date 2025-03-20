@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../assets/images/trote.jpg" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Uni-FACEF | Objetivo</title>
+    <script>
+        // Função para alternar o menu hambúrguer
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+</head>
+<body class="bg-gray-100 font-sans">
+
+    <!-- Barra de navegação -->
+    <nav class="bg-blue-600 p-3 flex justify-between items-center">
+        <!-- Logo e Foto do Trote -->
+        <div class="flex-1 flex items-center gap-4">
+            <img src="/assets/images/trote.jpg" alt="Trote Solidário" class="w-12 h-12 rounded-lg">
+            <a href="/" class="text-xl font-bold text-white hover:text-gray-200">Uni-FACEF | Trote solidário 2025</a>
+        </div>
+
+        <!-- Botão do menu hambúrguer (visível apenas em mobile) -->
+        <button id="menu-button" class="text-white focus:outline-none lg:hidden" onclick="toggleMenu()">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+        </button>
+
+        <!-- Links do menu (visíveis apenas em desktop) -->
+        <div id="links-menu" class="hidden lg:flex lg:gap-6 lg:items-center">
+            <a href="/" class="text-white hover:text-gray-200 transition duration-300">Home</a>
+            <a href="/html/pages/introducao.html" class="text-white hover:text-gray-200 transition duration-300">Introdução</a>
+            <a href="/html/pages/objetivo.html" class="text-white hover:text-gray-200 transition duration-300">Objetivo</a>
+            <a href="/html/pages/formato.html" class="text-white hover:text-gray-200 transition duration-300">Formato</a>
+            <a href="/html/pages/gincana.html" class="text-white hover:text-gray-200 transition duration-300">Gincana</a>
+            <a href="/html/pages/integracao.html" class="text-white hover:text-gray-200 transition duration-300">Integração</a>
+            <a href="/html/pages/observacoes.html" class="text-white hover:text-gray-200 transition duration-300">Observações</a>
+        </div>
+    </nav>
+
+    <!-- Menu vertical para mobile -->
+    <div id="mobile-menu" class="lg:hidden hidden bg-blue-600">
+        <div class="flex flex-col px-4 py-2">
+            <a href="/" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Home</a>
+            <a href="/html/pages/introducao.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Introdução</a>
+            <a href="/html/pages/objetivo.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Objetivo</a>
+            <a href="/html/pages/formato.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Formato</a>
+            <a href="/html/pages/gincana.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Gincana</a>
+            <a href="/html/pages/integracao.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Integração</a>
+            <a href="/html/pages/observacoes.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Observações</a>
+        </div>
+    </div>
+
+    <!-- Conteúdo principal -->
+    <div class="container mx-auto my-8 px-4 bg-white rounded-lg shadow-sm p-6">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">Objetivo</h2>
+        <p class="text-gray-700 mb-4">
+            Destaca-se como objetivo do TROTE SOLIDÁRIO Uni-FACEF 2025: integrar os estudantes dos primeiros períodos de 2025 à comunidade acadêmica do Uni-FACEF, com ações que demonstram a solidariedade para com a sociedade.
+        </p>
+        <p class="text-gray-700 mb-4">
+            Esta é uma oportunidade para a comunidade acadêmica exercer atividades práticas no contexto de Objetivos de Desenvolvimento Sustentável (ODS) amplamente difundidos, no âmbito da Organização das Nações Unidas (ONU).
+        </p>
+        <p class="text-gray-700">
+            Cada equipe deverá montar uma comissão composta por 2 (dois) estudantes de cada curso, que serão responsáveis por representar oficialmente a turma perante a comissão organizadora da Edição de 2025 do Trote Solidário Uni-FACEF e repassar as informações aos demais estudantes.
+        </p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../assets/images/trote.jpg" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Uni-FACEF | Formato</title>
+    <script>
+        // Função para alternar o menu hambúrguer
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+</head>
+<body class="bg-gray-100 font-sans">
+    <!-- Barra de navegação -->
+    <nav class="bg-blue-600 p-3 flex justify-between items-center">
+        <!-- Logo e Foto do Trote -->
+        <div class="flex-1 flex items-center gap-4">
+            <img src="/assets/images/trote.jpg" alt="Trote Solidário" class="w-12 h-12 rounded-lg">
+            <a href="/" class="text-xl font-bold text-white hover:text-gray-200">Uni-FACEF | Trote solidário 2025</a>
+        </div>
+
+        <!-- Botão do menu hambúrguer (visível apenas em mobile) -->
+        <button id="menu-button" class="text-white focus:outline-none lg:hidden" onclick="toggleMenu()">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+        </button>
+
+        <!-- Links do menu (visíveis apenas em desktop) -->
+        <div id="links-menu" class="hidden lg:flex lg:gap-6 lg:items-center">
+            <a href="/" class="text-white hover:text-gray-200 transition duration-300">Home</a>
+            <a href="/html/pages/introducao.html" class="text-white hover:text-gray-200 transition duration-300">Introdução</a>
+            <a href="/html/pages/objetivo.html" class="text-white hover:text-gray-200 transition duration-300">Objetivo</a>
+            <a href="/html/pages/formato.html" class="text-white hover:text-gray-200 transition duration-300">Formato</a>
+            <a href="/html/pages/gincana.html" class="text-white hover:text-gray-200 transition duration-300">Gincana</a>
+            <a href="/html/pages/integracao.html" class="text-white hover:text-gray-200 transition duration-300">Integração</a>
+            <a href="/html/pages/observacoes.html" class="text-white hover:text-gray-200 transition duration-300">Observações</a>
+        </div>
+    </nav>
+
+    <!-- Menu vertical para mobile -->
+    <div id="mobile-menu" class="lg:hidden hidden bg-blue-600">
+        <div class="flex flex-col px-4 py-2">
+            <a href="index.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Home</a>
+            <a href="/html/pages/introducao.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Introdução</a>
+            <a href="/html/pages/objetivo.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Objetivo</a>
+            <a href="/html/pages/formato.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Formato</a>
+            <a href="/html/pages/gincana.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Gincana</a>
+            <a href="/html/pages/integracao.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Integração</a>
+            <a href="/html/pages/observacoes.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Observações</a>
+        </div>
+    </div>
+
+    <!-- Conteúdo principal -->
+    <div class="container mx-auto my-8 px-4 bg-white rounded-lg shadow-sm p-6">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">Formato</h2>
+        <p class="text-gray-700 mb-4">
+            A proposta para este ano são ações voltadas à comunidade, desde o ingresso do estudante na IES. Cada equipe será representada por 3 padrinhos, formados pelos chefes de departamentos dos cursos (ou um docente por ele indicado). Ressalta-se que as equipes compostas por apenas dois cursos precisam eleger um docente adicional, comum entre eles, para completar o número de padrinhos estabelecido. Os padrinhos vão atuar na orientação e condução das provas a serem cumpridas pelos calouros, contando com o apoio dos demais docentes do curso. Assim, o TROTE SOLIDÁRIO Uni-FACEF 2025 contará com duas etapas:
+        </p>
+        <table class="w-full border-collapse border border-gray-300 mb-4">
+            <tr class="bg-gray-200">
+                <td class="border border-gray-300 p-2 font-bold">1ª Etapa</td>
+                <td class="border border-gray-300 p-2">
+                    Gincana Solidária
+                    <ul class="list-disc list-inside mt-2">
+                        <li>ALIMENTOS E SUPLEMENTOS</li>
+                        <li>CAMPANHA DO LEITE</li>
+                        <li>DOAÇÃO DE SANGUE</li>
+                        <li>AÇÃO EM ENTIDADES SOCIAIS DA CIDADE DE FRANCA</li>
+                        <li>REGISTRO AUDIOVISUAL</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="border border-gray-300 p-2 font-bold">2ª Etapa</td>
+                <td class="border border-gray-300 p-2">
+                    Integração e Envolvimento
+                    <ul class="list-disc list-inside mt-2">
+                        <li>HOMENAGEM A ESPORTISTAS FRANCANOS</li>
+                        <li>MASCOTE DA EQUIPE</li>
+                        <li>CARACTERIZAÇÃO E ANIMAÇÃO</li>
+                        <li>ATIVIDADES RECREATIVAS E CARACTERIZAÇÃO</li>
+                        <li>APRESENTAÇÃO DAS AÇÕES SOCIAIS NAS ENTIDADES</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+
+        <p class="text-gray-600 mb-4">A abertura oficial do Trote Solidário Uni-FACEF 2025 se dará no dia 18 de
+            fevereiro, às 18h15, no <strong>Auditório “Edna Maria Campanhol”</strong>, Unidade 2, com uma fala
+            de boas-vindas, ressaltando a importância da ação, e posteriormente será realizada a
+            apresentação do regulamento e o sorteio referente às cores, salas de entrega da
+            arrecadação e ordem de apresentação na noite de encerramento</p>
+    </div>
+</body>
+</html>
