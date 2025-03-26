@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../../assets/images/trote.jpg" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Ícones do Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <title>Uni-FACEF | Objetivo</title>
     <script>
         // Função para alternar o menu hambúrguer
@@ -13,61 +15,256 @@
             menu.classList.toggle('hidden');
         }
     </script>
+    <style>
+        /* Animação suave para os cards */
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        /* Estilo para destaques */
+        .highlight-box {
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            color: white;
+            border-radius: 0.5rem;
+        }
+    </style>
 </head>
-<body class="bg-gray-100 font-sans">
-
+<body class="bg-gray-50 font-sans">
     <!-- Barra de navegação -->
-    <nav class="bg-blue-600 p-3 flex justify-between items-center">
-        <!-- Logo e Foto do Trote -->
-        <div class="flex-1 flex items-center gap-4">
-            <img src="/assets/images/trote.jpg" alt="Trote Solidário" class="w-12 h-12 rounded-lg">
-            <a href="/" class="text-xl font-bold text-white hover:text-gray-200">Uni-FACEF | Trote solidário 2025</a>
+    <nav class="bg-blue-600 shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- Logo e Foto do Trote -->
+            <div class="flex-1 flex items-center gap-4">
+                <img src="/assets/images/trote.jpg" alt="Trote Solidário" class="w-12 h-12 rounded-lg shadow-md">
+                <a href="/" class="text-xl font-bold text-white hover:text-gray-200 flex items-center">
+                    <i class="fas fa-hand-holding-heart mr-2"></i> Uni-FACEF | Trote Solidário 2025
+                </a>
+            </div>
+
+            <!-- Botão do menu hambúrguer (visível apenas em mobile) -->
+            <button id="menu-button" class="text-white focus:outline-none lg:hidden" onclick="toggleMenu()">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+
+            <!-- Links do menu (visíveis apenas em desktop) -->
+            <div id="links-menu" class="hidden lg:flex lg:gap-6 lg:items-center">
+                <a href="/" class="text-white hover:text-gray-200 transition duration-300 flex items-center">
+                    <i class="fas fa-home mr-1"></i> Home
+                </a>
+                <a href="/html/pages/introducao.html" class="text-white hover:text-gray-200 transition duration-300 flex items-center">
+                    <i class="fas fa-info-circle mr-1"></i> Introdução
+                </a>
+                <a href="/html/pages/objetivo.html" class="text-white hover:text-gray-200 transition duration-300 flex items-center font-bold">
+                    <i class="fas fa-bullseye mr-1"></i> Objetivo
+                </a>
+                <a href="/html/pages/formato.html" class="text-white hover:text-gray-200 transition duration-300 flex items-center">
+                    <i class="fas fa-list-alt mr-1"></i> Formato
+                </a>
+                <a href="/html/pages/gincana.html" class="text-white hover:text-gray-200 transition duration-300 flex items-center">
+                    <i class="fas fa-trophy mr-1"></i> Gincana
+                </a>
+                <a href="/html/pages/integracao.html" class="text-white hover:text-gray-200 transition duration-300 flex items-center">
+                    <i class="fas fa-users mr-1"></i> Integração
+                </a>
+                <a href="/html/pages/observacoes.html" class="text-white hover:text-gray-200 transition duration-300 flex items-center">
+                    <i class="fas fa-clipboard-check mr-1"></i> Observações
+                </a>
+                <a href="/html/pages/calculadora.html" class="text-white hover:text-gray-200 transition duration-300 flex items-center">
+                    <i class="fas fa-calculator mr-1"></i> Calculadora
+                </a>
+            </div>
         </div>
 
-        <!-- Botão do menu hambúrguer (visível apenas em mobile) -->
-        <button id="menu-button" class="text-white focus:outline-none lg:hidden" onclick="toggleMenu()">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-            </svg>
-        </button>
-
-        <!-- Links do menu (visíveis apenas em desktop) -->
-        <div id="links-menu" class="hidden lg:flex lg:gap-6 lg:items-center">
-            <a href="/" class="text-white hover:text-gray-200 transition duration-300">Home</a>
-            <a href="/html/pages/introducao.html" class="text-white hover:text-gray-200 transition duration-300">Introdução</a>
-            <a href="/html/pages/objetivo.html" class="text-white hover:text-gray-200 transition duration-300">Objetivo</a>
-            <a href="/html/pages/formato.html" class="text-white hover:text-gray-200 transition duration-300">Formato</a>
-            <a href="/html/pages/gincana.html" class="text-white hover:text-gray-200 transition duration-300">Gincana</a>
-            <a href="/html/pages/integracao.html" class="text-white hover:text-gray-200 transition duration-300">Integração</a>
-            <a href="/html/pages/observacoes.html" class="text-white hover:text-gray-200 transition duration-300">Observações</a>
+        <!-- Menu vertical para mobile -->
+        <div id="mobile-menu" class="lg:hidden hidden bg-blue-700">
+            <div class="flex flex-col px-4 py-2">
+                <a href="/" class="text-white hover:bg-blue-600 py-2 px-4 rounded flex items-center">
+                    <i class="fas fa-home mr-2"></i> Home
+                </a>
+                <a href="/html/pages/introducao.html" class="text-white hover:bg-blue-600 py-2 px-4 rounded flex items-center">
+                    <i class="fas fa-info-circle mr-2"></i> Introdução
+                </a>
+                <a href="/html/pages/objetivo.html" class="text-white hover:bg-blue-600 py-2 px-4 rounded flex items-center font-bold">
+                    <i class="fas fa-bullseye mr-2"></i> Objetivo
+                </a>
+                <a href="/html/pages/formato.html" class="text-white hover:bg-blue-600 py-2 px-4 rounded flex items-center">
+                    <i class="fas fa-list-alt mr-2"></i> Formato
+                </a>
+                <a href="/html/pages/gincana.html" class="text-white hover:bg-blue-600 py-2 px-4 rounded flex items-center">
+                    <i class="fas fa-trophy mr-2"></i> Gincana
+                </a>
+                <a href="/html/pages/integracao.html" class="text-white hover:bg-blue-600 py-2 px-4 rounded flex items-center">
+                    <i class="fas fa-users mr-2"></i> Integração
+                </a>
+                <a href="/html/pages/observacoes.html" class="text-white hover:bg-blue-600 py-2 px-4 rounded flex items-center">
+                    <i class="fas fa-clipboard-check mr-2"></i> Observações
+                </a>
+                <a href="/html/pages/calculadora.html" class="text-white hover:bg-blue-600 py-2 px-4 rounded flex items-center">
+                    <i class="fas fa-calculator mr-2"></i> Calculadora
+                </a>
+            </div>
         </div>
     </nav>
 
-    <!-- Menu vertical para mobile -->
-    <div id="mobile-menu" class="lg:hidden hidden bg-blue-600">
-        <div class="flex flex-col px-4 py-2">
-            <a href="/" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Home</a>
-            <a href="/html/pages/introducao.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Introdução</a>
-            <a href="/html/pages/objetivo.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Objetivo</a>
-            <a href="/html/pages/formato.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Formato</a>
-            <a href="/html/pages/gincana.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Gincana</a>
-            <a href="/html/pages/integracao.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Integração</a>
-            <a href="/html/pages/observacoes.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Observações</a>
+    <!-- Hero Section -->
+    <div class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-12">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">
+                <i class="fas fa-bullseye mr-2"></i> Objetivo
+            </h1>
+            <p class="text-xl md:text-2xl">Propósito e metas do Trote Solidário 2025</p>
         </div>
     </div>
 
     <!-- Conteúdo principal -->
-    <div class="container mx-auto my-8 px-4 bg-white rounded-lg shadow-sm p-6">
-        <h2 class="text-3xl font-bold text-gray-800 mb-4">Objetivo</h2>
-        <p class="text-gray-700 mb-4">
-            Destaca-se como objetivo do TROTE SOLIDÁRIO Uni-FACEF 2025: integrar os estudantes dos primeiros períodos de 2025 à comunidade acadêmica do Uni-FACEF, com ações que demonstram a solidariedade para com a sociedade.
-        </p>
-        <p class="text-gray-700 mb-4">
-            Esta é uma oportunidade para a comunidade acadêmica exercer atividades práticas no contexto de Objetivos de Desenvolvimento Sustentável (ODS) amplamente difundidos, no âmbito da Organização das Nações Unidas (ONU).
-        </p>
-        <p class="text-gray-700">
-            Cada equipe deverá montar uma comissão composta por 2 (dois) estudantes de cada curso, que serão responsáveis por representar oficialmente a turma perante a comissão organizadora da Edição de 2025 do Trote Solidário Uni-FACEF e repassar as informações aos demais estudantes.
-        </p>
+    <div class="container mx-auto my-12 px-4">
+        <!-- Seção de Objetivo Principal -->
+        <section class="bg-white rounded-xl shadow-lg p-8 mb-12 card-hover">
+            <div class="flex items-center mb-6">
+                <div class="bg-blue-100 text-blue-600 p-3 rounded-full mr-4">
+                    <i class="fas fa-star text-2xl"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-800">Objetivo Principal</h2>
+            </div>
+            
+            <div class="highlight-box p-6 mb-6">
+                <p class="text-xl text-white">
+                    <i class="fas fa-quote-left mr-2"></i> Integrar os estudantes dos primeiros períodos de 2025 à comunidade acadêmica do Uni-FACEF, com ações que demonstram a solidariedade para com a sociedade.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-blue-500">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 text-blue-600 p-3 rounded-full mr-4">
+                            <i class="fas fa-hands-helping text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800">Integração Social</h3>
+                    </div>
+                    <p class="text-gray-700">
+                        Promover a adaptação dos calouros ao ambiente universitário através de atividades colaborativas que beneficiam a comunidade.
+                    </p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-blue-500">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 text-blue-600 p-3 rounded-full mr-4">
+                            <i class="fas fa-globe-americas text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800">ODS da ONU</h3>
+                    </div>
+                    <p class="text-gray-700">
+                        Alinhar as atividades com os Objetivos de Desenvolvimento Sustentável da ONU, contribuindo para um mundo melhor.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Estrutura Organizacional -->
+        <section class="bg-white rounded-xl shadow-lg p-8 mb-12 card-hover">
+            <div class="flex items-center mb-6">
+                <div class="bg-blue-100 text-blue-600 p-3 rounded-full mr-4">
+                    <i class="fas fa-sitemap text-2xl"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-800">Estrutura Organizacional</h2>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center mb-8">
+                <div class="md:w-1/3 mb-6 md:mb-0">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                         alt="Equipe organizadora" 
+                         class="w-full h-auto rounded-lg shadow-md">
+                </div>
+                <div class="md:w-2/3 md:pl-8">
+                    <p class="text-gray-700 mb-4 text-lg">
+                        Cada equipe deverá montar uma comissão composta por 2 (dois) estudantes de cada curso, que serão responsáveis por representar oficialmente a turma perante a comissão organizadora da Edição de 2025 do Trote Solidário Uni-FACEF.
+                    </p>
+                    <ul class="text-gray-700 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                            <span>Dois representantes por curso</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                            <span>Interlocutores oficiais com a organização</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                            <span>Responsáveis por repassar informações aos colegas</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
+                <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                    <i class="fas fa-lightbulb text-yellow-500 mr-2"></i> Por que participar?
+                </h3>
+                <p class="text-gray-700">
+                    O Trote Solidário é uma oportunidade única para desenvolver habilidades de trabalho em equipe, liderança e responsabilidade social, enquanto contribui para causas importantes e se integra à vida universitária.
+                </p>
+            </div>
+        </section>
+
+        <!-- Seção de Call to Action -->
+        <div class="text-center bg-gradient-to-r from-blue-600 to-blue-700 p-12 rounded-xl shadow-lg">
+            <h2 class="text-3xl font-bold text-white mb-4">
+                <i class="fas fa-hands-clapping mr-2"></i> Pronto para fazer a diferença?
+            </h2>
+            <p class="text-gray-200 mb-6 text-xl max-w-3xl mx-auto">
+                Junte-se a nós nesta jornada de solidariedade e integração. Sua participação é essencial para o sucesso desta iniciativa!
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="/html/pages/observacoes.html" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300 flex items-center justify-center">
+                    <i class="fas fa-info-circle mr-2"></i> Saiba mais
+                </a>
+                <a href="/html/pages/calculadora.html" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition duration-300 flex items-center justify-center">
+                    <i class="fas fa-calculator mr-2"></i> Calculadora de Pontos
+                </a>
+            </div>
+        </div>
     </div>
+
+    <!-- Rodapé -->
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center">
+                        <img src="/assets/images/trote.jpg" alt="Trote Solidário" class="w-10 h-10 rounded-lg mr-3">
+                        <span class="text-xl font-bold">Uni-FACEF | Trote Solidário 2025</span>
+                    </div>
+                    <p class="text-gray-400 mt-2">Construa vitórias fora de campo e jogue pela solidariedade</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white text-2xl">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white text-2xl">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white text-2xl">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white text-2xl">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2025 Uni-FACEF. Todos os direitos reservados.</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Política de Privacidade</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Termos de Uso</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Contato</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

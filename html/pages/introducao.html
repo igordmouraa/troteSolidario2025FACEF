@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../../assets/images/trote.jpg" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Ícones do Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <title>Uni-FACEF | Introdução</title>
     <script>
         // Função para alternar o menu hambúrguer
@@ -13,99 +15,267 @@
             menu.classList.toggle('hidden');
         }
     </script>
+    <style>
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 3rem;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: #3b82f6;
+        }
+    </style>
 </head>
-<body class="bg-gray-100 font-sans">
+<body class="bg-gray-50 font-sans">
 
-     <!-- Barra de navegação -->
-     <nav class="bg-blue-600 shadow-sm">
+    <!-- Barra de navegação -->
+    <nav class="bg-blue-600 shadow-lg">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <!-- Logo e Foto do Trote -->
             <div class="flex-1 flex items-center gap-4">
-                <img src="/assets/images/trote.jpg" alt="Trote Solidário" class="w-12 h-12 rounded-lg">
-                <a href="/" class="text-xl font-bold text-white hover:text-gray-200">Uni-FACEF | Trote solidário 2025</a>
+                <img src="/assets/images/trote.jpg" alt="Trote Solidário" class="w-12 h-12 rounded-lg shadow-md">
+                <a href="/" class="text-xl font-bold text-white hover:text-gray-200 flex items-center">
+                    <i class="fas fa-hand-holding-heart mr-2"></i> Uni-FACEF | Trote Solidário 2025
+                </a>
             </div>
 
-            <!-- Botão do menu hambúrguer (visível apenas em mobile) -->
             <button id="menu-button" class="text-white focus:outline-none lg:hidden" onclick="toggleMenu()">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                 </svg>
             </button>
 
-            <!-- Links do menu (visíveis apenas em desktop) -->
             <div id="links-menu" class="hidden lg:flex lg:gap-6 lg:items-center">
-                <a href="/" class="text-white hover:text-gray-200 transition duration-300">Home</a>
-                <a href="/html/pages/introducao.html" class="text-white hover:text-gray-200 transition duration-300">Introdução</a>
-                <a href="/html/pages/objetivo.html" class="text-white hover:text-gray-200 transition duration-300">Objetivo</a>
-                <a href="/html/pages/formato.html" class="text-white hover:text-gray-200 transition duration-300">Formato</a>
-                <a href="/html/pages/gincana.html" class="text-white hover:text-gray-200 transition duration-300">Gincana</a>
-                <a href="/html/pages/integracao.html" class="text-white hover:text-gray-200 transition duration-300">Integração</a>
-                <a href="/html/pages/observacoes.html" class="text-white hover:text-gray-200 transition duration-300">Observações</a>
+                <a href="/" class="text-white hover:text-gray-200 transition duration-300 flex items-center">
+                    <i class="fas fa-home mr-1"></i> Home
+                </a>
+                <a href="/html/pages/introducao.html" class="text-white hover:text-gray-200 transition duration-300 flex items-center font-bold">
+                    <i class="fas fa-info-circle mr-1"></i> Introdução
+                </a>
+                <a href="/html/pages/objetivo.html" class="text-white hover:text-gray-200 transition duration-300 flex items-center">
+                    <i class="fas fa-bullseye mr-1"></i> Objetivo
+                </a>
+                <a href="/html/pages/formato.html" class="text-white hover:text-gray-200 transition duration-300 flex items-center">
+                    <i class="fas fa-list-alt mr-1"></i> Formato
+                </a>
+                <a href="/html/pages/gincana.html" class="text-white hover:text-gray-200 transition duration-300 flex items-center">
+                    <i class="fas fa-trophy mr-1"></i> Gincana
+                </a>
+                <a href="/html/pages/integracao.html" class="text-white hover:text-gray-200 transition duration-300 flex items-center">
+                    <i class="fas fa-users mr-1"></i> Integração
+                </a>
+                <a href="/html/pages/observacoes.html" class="text-white hover:text-gray-200 transition duration-300 flex items-center">
+                    <i class="fas fa-clipboard-check mr-1"></i> Observações
+                </a>
+                <a href="/html/pages/calculadora.html" class="text-white hover:text-gray-200 transition duration-300 flex items-center">
+                    <i class="fas fa-calculator mr-1"></i> Calculadora
+                </a>
             </div>
         </div>
 
         <!-- Menu vertical para mobile -->
-        <div id="mobile-menu" class="lg:hidden hidden bg-blue-600">
+        <div id="mobile-menu" class="lg:hidden hidden bg-blue-700">
             <div class="flex flex-col px-4 py-2">
-                <a href="/" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Home</a>
-                <a href="/html/pages/introducao.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Introdução</a>
-                <a href="/html/pages/objetivo.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Objetivo</a>
-                <a href="/html/pages/formato.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Formato</a>
-                <a href="/html/pages/gincana.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Gincana</a>
-                <a href="/html/pages/integracao.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Integração</a>
-                <a href="/html/pages/observacoes.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Observações</a>
+                <a href="/" class="text-white hover:bg-blue-600 py-2 px-4 rounded flex items-center">
+                    <i class="fas fa-home mr-2"></i> Home
+                </a>
+                <a href="/html/pages/introducao.html" class="text-white hover:bg-blue-600 py-2 px-4 rounded flex items-center font-bold">
+                    <i class="fas fa-info-circle mr-2"></i> Introdução
+                </a>
+                <a href="/html/pages/objetivo.html" class="text-white hover:bg-blue-600 py-2 px-4 rounded flex items-center">
+                    <i class="fas fa-bullseye mr-2"></i> Objetivo
+                </a>
+                <a href="/html/pages/formato.html" class="text-white hover:bg-blue-600 py-2 px-4 rounded flex items-center">
+                    <i class="fas fa-list-alt mr-2"></i> Formato
+                </a>
+                <a href="/html/pages/gincana.html" class="text-white hover:bg-blue-600 py-2 px-4 rounded flex items-center">
+                    <i class="fas fa-trophy mr-2"></i> Gincana
+                </a>
+                <a href="/html/pages/integracao.html" class="text-white hover:bg-blue-600 py-2 px-4 rounded flex items-center">
+                    <i class="fas fa-users mr-2"></i> Integração
+                </a>
+                <a href="/html/pages/calculadora.html" class="text-white hover:bg-blue-600 py-2 px-4 rounded flex items-center">
+                    <i class="fas fa-calculator mr-2"></i> Calculadora
+                </a>
             </div>
         </div>
     </nav>
 
-    <!-- Menu vertical para mobile -->
-    <div id="mobile-menu" class="lg:hidden hidden bg-blue-600">
-        <div class="flex flex-col px-4 py-2">
-            <a href="/" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Home</a>
-            <a href="/html/pages/introducao.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Introdução</a>
-            <a href="/html/pages/objetivo.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Objetivo</a>
-            <a href="/html/pages/formato.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Formato</a>
-            <a href="/html/pages/gincana.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Gincana</a>
-            <a href="/html/pages/integracao.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Integração</a>
-            <a href="/html/pages/observacoes.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Observações</a>
+    <!-- Hero Section -->
+    <div class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-12">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">
+                <i class="fas fa-university mr-2"></i> Nossa História
+            </h1>
+            <p class="text-xl md:text-2xl">Conheça a trajetória do Uni-FACEF</p>
         </div>
     </div>
 
     <!-- Conteúdo principal -->
-    <div class="container mx-auto my-8 px-4 bg-white rounded-lg shadow-sm p-6">
-        <h2 class="text-3xl font-bold text-gray-800 mb-4">Introdução</h2>
-        <p class="text-gray-700 mb-4">
-            O Centro Universitário Municipal de Franca - Uni-FACEF, criado em 1951, como Faculdade de Ciências Econômicas é uma instituição pública, constituída como autarquia municipal, que foca suas ações no desenvolvimento científico e cultural, na formação com qualidade de profissionais de nível universitário, e também no fomento à promoção do progresso social e do bem comum.
-        </p>
-        <p class="text-gray-700 mb-4">
-            Ao longo dos anos, o Uni-FACEF promove uma constante atualização de suas atividades pedagógicas, legitimando seu trabalho acadêmico científico, na formação de seus profissionais, proporcionando serviços de qualidade à sociedade. Tem-se como objetivo maior a formação de cidadãos capacitados para a vida profissional e comunitária que, pelo saber e pelo ser, atuarão positivamente em vários segmentos e instituições sociais, colaborando para uma sociedade mais justa e solidária.
-        </p>
-        <p class="text-gray-700 mb-4">
-            Atualmente, são oferecidos treze cursos de graduação: Administração, Ciência da Computação, Ciências Contábeis, Comunicação Social com Hab. em Publicidade e Propaganda, Enfermagem, Engenharia Civil, Engenharia de Produção, Engenharia de Software, Letras, Matemática, Medicina, Psicologia e Sistemas de Informação.
-        </p>
-        <p class="text-gray-700 mb-4">
-            O Uni-FACEF conta com professores mestres e doutores, todos concursados, para o atendimento anual de aproximadamente 2000 alunos, em sua área de atuação. E pensando na continuidade da formação, oferece, ainda, uma diversidade de cursos de pós-graduação Lato Sensu, com os cursos de MBA e Especializações e Stricto Sensu, com o Programa de Mestrado Interdisciplinar em Desenvolvimento Regional, reconhecido pela CAPES.
-        </p>
-        <p class="text-gray-700 mb-4">
-            Evidencia-se que os cursos do Uni-FACEF estão articulados com sua missão: “Construir e difundir o conhecimento, contribuindo para a formação do ser humano, a fim de que ele exerça o seu papel na sociedade com ética e cidadania”. Especificamente, corresponde com as finalidades a que se propõe:
-        </p>
-        <ol class="list-decimal list-inside text-gray-700 mb-4">
-            <li class="mb-2">
-                Formar pessoas com habilidade tanto para um alto desempenho técnico-profissional, quanto para o exercício da cidadania, com uma vivência ética e participativa no mundo social;
-            </li>
-            <li class="mb-2">
-                Promover a construção do conhecimento, a sua transmissão crítica e a compreensão do mundo atual, particularmente no que se refere às necessidades nacionais e regionais;
-            </li>
-            <li class="mb-2">
-                Participar do desenvolvimento de condições e ações que evidenciem o “aprender a aprender” e promovam a educação continuada, nos campos de atuação profissional com que se identificam;
-            </li>
-            <li class="mb-2">
-                Partilhar, com todos os segmentos da sociedade, da identificação, análise e busca de soluções dos problemas da comunidade, tanto local e regional, quanto da sociedade mais ampla, estimulados a participar em pesquisas científicas e a publicar seus trabalhos em eventos.
-            </li>
-        </ol>
-        <p class="text-gray-700">
-            Nesse contexto, fomenta-se o Trote Solidário entre os calouros, como uma iniciativa institucional, já presente no Uni-FACEF há mais de 30 anos, visando à inserção do discente no ambiente acadêmico, focando a promoção social, agregando em sua formação a importância de esforços que tornem suas decisões mais éticas e humanas.
-        </p>
+    <div class="container mx-auto my-12 px-4">
+        <section class="bg-white rounded-xl shadow-lg p-8 mb-12 card-hover">
+            <div class="flex flex-col md:flex-row items-center mb-8">
+                <div class="md:w-1/3 mb-6 md:mb-0 md:pr-8">
+                    <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                         alt="Campus Uni-FACEF" 
+                         class="w-full h-auto rounded-lg shadow-md">
+                </div>
+                <div class="md:w-2/3">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4 flex items-center">
+                        <i class="fas fa-book-open text-blue-500 mr-2"></i> Sobre o Uni-FACEF
+                    </h2>
+                    <p class="text-gray-700 mb-4 text-lg">
+                        Fundado em 1951 como Faculdade de Ciências Econômicas, o Uni-FACEF é uma instituição pública municipal que combina excelência acadêmica com compromisso social. Nossa missão é formar profissionais éticos e cidadãos conscientes através de um ensino de qualidade aliado à pesquisa e extensão comunitária.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="flex items-center mb-4">
+                    <div class="bg-blue-100 text-blue-600 p-3 rounded-full mr-4">
+                        <i class="fas fa-graduation-cap text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800">Cursos Oferecidos</h3>
+                </div>
+                <p class="text-gray-700 mb-6">
+                    Oferecemos 13 cursos de graduação nas áreas de Exatas, Saúde e Humanidades, com corpo docente altamente qualificado (90% mestres e doutores):
+                </p>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
+                    <span class="bg-gray-100 px-3 py-2 rounded-full text-center">
+                        <i class="fas fa-briefcase mr-2 text-blue-500"></i>Administração
+                    </span>
+                    <span class="bg-gray-100 px-3 py-2 rounded-full text-center">
+                        <i class="fas fa-laptop-code mr-2 text-blue-500"></i>Ciência da Computação
+                    </span>
+                    <span class="bg-gray-100 px-3 py-2 rounded-full text-center">
+                        <i class="fas fa-stethoscope mr-2 text-blue-500"></i>Enfermagem
+                    </span>
+                    <span class="bg-gray-100 px-3 py-2 rounded-full text-center">
+                        <i class="fas fa-hard-hat mr-2 text-blue-500"></i>Engenharia Civil
+                    </span>
+                    <span class="bg-gray-100 px-3 py-2 rounded-full text-center">
+                        <i class="fas fa-brain mr-2 text-blue-500"></i>Psicologia
+                    </span>
+                    <span class="bg-gray-100 px-3 py-2 rounded-full text-center">
+                        <i class="fas fa-user-md mr-2 text-blue-500"></i>Medicina
+                    </span>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="flex items-center mb-4">
+                    <div class="bg-blue-100 text-blue-600 p-3 rounded-full mr-4">
+                        <i class="fas fa-chart-line text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800">Missão Institucional</h3>
+                </div>
+                <p class="text-gray-700 mb-4">
+                    <i class="fas fa-quote-left text-blue-500 mr-2"></i>Construir e difundir o conhecimento, contribuindo para a formação do ser humano, a fim de que ele exerça o seu papel na sociedade com ética e cidadania.<i class="fas fa-quote-right text-blue-500 ml-2"></i>
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
+                        <h4 class="text-lg font-semibold mb-2 flex items-center">
+                            <i class="fas fa-user-graduate text-blue-500 mr-2"></i>Formação Integral
+                        </h4>
+                        <p class="text-gray-700">Desenvolvimento técnico-profissional aliado à formação cidadã</p>
+                    </div>
+                    <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
+                        <h4 class="text-lg font-semibold mb-2 flex items-center">
+                            <i class="fas fa-flask text-blue-500 mr-2"></i>Pesquisa Aplicada
+                        </h4>
+                        <p class="text-gray-700">Soluções inovadoras para problemas reais da comunidade</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="flex items-center mb-4">
+                    <div class="bg-blue-100 text-blue-600 p-3 rounded-full mr-4">
+                        <i class="fas fa-hands-helping text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800">Trote Solidário</h3>
+                </div>
+                <p class="text-gray-700 mb-6">
+                    Tradição de mais de 30 anos que integra calouros à vida acadêmica através de ações sociais:
+                </p>
+                <div class="bg-green-50 p-6 rounded-lg border-l-4 border-green-500">
+                    <div class="flex items-start">
+                        <i class="fas fa-heart text-green-500 text-2xl mr-4"></i>
+                        <div>
+                            <h4 class="text-lg font-semibold mb-2">Impacto Social</h4>
+                            <p class="text-gray-700">Arrecadação média anual de 15 toneladas de alimentos e 500 litros de sangue</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <div class="text-center bg-gradient-to-r from-blue-600 to-blue-700 p-12 rounded-xl shadow-lg">
+            <h2 class="text-3xl font-bold text-white mb-4">
+                <i class="fas fa-handshake mr-2"></i> Faça Parte Desta História!
+            </h2>
+            <p class="text-gray-200 mb-6 text-xl max-w-3xl mx-auto">
+                Junte-se a uma instituição com mais de 70 anos de excelência acadêmica e compromisso social
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="/html/pages/observacoes.html" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300">
+                    <i class="fas fa-user-plus mr-2"></i> Participe do Trote
+                </a>
+                <a href="/html/pages/calculadora.html" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition duration-300">
+                    <i class="fas fa-graduation-cap mr-2"></i> Processo Seletivo
+                </a>
+            </div>
+        </div>
     </div>
+
+    <!-- Rodapé -->
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center">
+                        <img src="/assets/images/trote.jpg" alt="Trote Solidário" class="w-10 h-10 rounded-lg mr-3">
+                        <span class="text-xl font-bold">Uni-FACEF | Trote Solidário 2025</span>
+                    </div>
+                    <p class="text-gray-400 mt-2">Construa vitórias fora de campo e jogue pela solidariedade</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white text-2xl">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white text-2xl">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white text-2xl">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white text-2xl">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2025 Uni-FACEF. Todos os direitos reservados.</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Política de Privacidade</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Termos de Uso</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Contato</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

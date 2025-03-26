@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/images/trote.jpg" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Uni-FACEF | Calculadora de Pontos - Trote solidário 2025</title>
+    <script>
+        // Função para alternar o menu hambúrguer
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+    <script src="../../js/index.js"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+    <!-- Barra de navegação -->
+    <nav class="bg-blue-600 shadow-sm">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- Logo e Foto do Trote -->
+            <div class="flex-1 flex items-center gap-4">
+                <img src="/assets/images/trote.jpg" alt="Trote Solidário" class="w-12 h-12 rounded-lg">
+                <a href="/" class="text-xl font-bold text-white hover:text-gray-200">Uni-FACEF | Trote solidário 2025</a>
+            </div>
+
+            <!-- Botão do menu hambúrguer (visível apenas em mobile) -->
+            <button id="menu-button" class="text-white focus:outline-none lg:hidden" onclick="toggleMenu()">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+
+            <!-- Links do menu (visíveis apenas em desktop) -->
+            <div id="links-menu" class="hidden lg:flex lg:gap-6 lg:items-center">
+                <a href="/" class="text-white hover:text-gray-200 transition duration-300">Home</a>
+                <a href="/html/pages/introducao.html" class="text-white hover:text-gray-200 transition duration-300">Introdução</a>
+                <a href="/html/pages/objetivo.html" class="text-white hover:text-gray-200 transition duration-300">Objetivo</a>
+                <a href="/html/pages/formato.html" class="text-white hover:text-gray-200 transition duration-300">Formato</a>
+                <a href="/html/pages/gincana.html" class="text-white hover:text-gray-200 transition duration-300">Gincana</a>
+                <a href="/html/pages/integracao.html" class="text-white hover:text-gray-200 transition duration-300">Integração</a>
+                <a href="/html/pages/observacoes.html" class="text-white hover:text-gray-200 transition duration-300">Observações</a>
+                <a href="/html/pages/calculadora.html" class="text-white hover:text-gray-200 transition duration-300 font-bold underline">Calculadora</a>
+            </div>
+        </div>
+
+        <!-- Menu vertical para mobile -->
+        <div id="mobile-menu" class="lg:hidden hidden bg-blue-600">
+            <div class="flex flex-col px-4 py-2">
+                <a href="/" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Home</a>
+                <a href="/html/pages/introducao.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Introdução</a>
+                <a href="/html/pages/objetivo.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Objetivo</a>
+                <a href="/html/pages/formato.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Formato</a>
+                <a href="/html/pages/gincana.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Gincana</a>
+                <a href="/html/pages/integracao.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Integração</a>
+                <a href="/html/pages/observacoes.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Observações</a>
+                <a href="/html/pages/calculadora.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded font-bold underline">Calculadora</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Conteúdo principal -->
+    <div class="container mx-auto my-8 px-4">
+        <h1 class="text-3xl font-bold text-gray-800 mb-6 text-center">Calculadora de Pontos - Trote Solidário 2025</h1>
+        
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <p class="text-gray-600 mb-6">Preencha os campos abaixo com os pontos obtidos em cada categoria para calcular o total de pontos do seu time.</p>
+            
+            <form id="calculadora-form" class="space-y-6">
+                <!-- Seção Esportes -->
+                <div class="border-b border-gray-200 pb-6">
+                    <h2 class="text-xl font-bold text-gray-800 mb-4">🏆 Esportes</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div>
+                            <label for="mascote" class="block text-sm font-medium text-gray-700 mb-1">Mascote do Time (0-50 pontos)</label>
+                            <input type="number" id="mascote" min="0" max="50" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                        <div>
+                            <label for="homenagem" class="block text-sm font-medium text-gray-700 mb-1">Homenagem a um Atleta (0-50 pontos)</label>
+                            <input type="number" id="homenagem" min="0" max="50" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                        <div>
+                            <label for="provas-esportivas" class="block text-sm font-medium text-gray-700 mb-1">Provas Esportivas (0-100 pontos)</label>
+                            <input type="number" id="provas-esportivas" min="0" max="100" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Seção Solidariedade -->
+                <div class="border-b border-gray-200 pb-6">
+                    <h2 class="text-xl font-bold text-gray-800 mb-4">❤️ Solidariedade</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div>
+                            <label for="arrecadacao" class="block text-sm font-medium text-gray-700 mb-1">Arrecadação de Donativos (0-150 pontos)</label>
+                            <input type="number" id="arrecadacao" min="0" max="150" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                        <div>
+                            <label for="doacao-sangue" class="block text-sm font-medium text-gray-700 mb-1">Doação de Sangue (0-100 pontos)</label>
+                            <input type="number" id="doacao-sangue" min="0" max="100" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                        <div>
+                            <label for="tarefas-solidarias" class="block text-sm font-medium text-gray-700 mb-1">Tarefas Solidárias (0-50 pontos)</label>
+                            <input type="number" id="tarefas-solidarias" min="0" max="50" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Seção Cultural -->
+                <div class="border-b border-gray-200 pb-6">
+                    <h2 class="text-xl font-bold text-gray-800 mb-4">🎭 Cultural</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div>
+                            <label for="provas-culturais" class="block text-sm font-medium text-gray-700 mb-1">Provas Culturais (0-100 pontos)</label>
+                            <input type="number" id="provas-culturais" min="0" max="100" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                        <div>
+                            <label for="provas-conhecimento" class="block text-sm font-medium text-gray-700 mb-1">Provas de Conhecimento (0-100 pontos)</label>
+                            <input type="number" id="provas-conhecimento" min="0" max="100" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                        <div>
+                            <label for="criatividade" class="block text-sm font-medium text-gray-700 mb-1">Criatividade (0-50 pontos)</label>
+                            <input type="number" id="criatividade" min="0" max="50" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Seção Integração -->
+                <div class="pb-6">
+                    <h2 class="text-xl font-bold text-gray-800 mb-4">🤝 Integração</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div>
+                            <label for="integracao" class="block text-sm font-medium text-gray-700 mb-1">Atividades de Integração (0-100 pontos)</label>
+                            <input type="number" id="integracao" min="0" max="100" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Botões -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button type="button" onclick="calcularPontos()" class="px-6 py-3 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                        Calcular Pontos
+                    </button>
+                    <button type="button" onclick="resetarCalculadora()" class="px-6 py-3 bg-gray-200 text-gray-800 font-medium rounded-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
+                        Limpar Campos
+                    </button>
+                </div>
+            </form>
+            
+            <!-- Resultados (inicialmente oculto) -->
+            <div id="resultados" class="hidden mt-8 bg-blue-50 p-6 rounded-lg border border-blue-200">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center">Resultados</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+                    <div class="bg-white p-4 rounded-lg shadow-sm text-center">
+                        <h3 class="text-sm font-medium text-gray-500">Esportes</h3>
+                        <p class="text-3xl font-bold text-blue-600"><span id="total-esportes">0</span> pts</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm text-center">
+                        <h3 class="text-sm font-medium text-gray-500">Solidariedade</h3>
+                        <p class="text-3xl font-bold text-blue-600"><span id="total-solidariedade">0</span> pts</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm text-center">
+                        <h3 class="text-sm font-medium text-gray-500">Cultural</h3>
+                        <p class="text-3xl font-bold text-blue-600"><span id="total-cultural">0</span> pts</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm text-center">
+                        <h3 class="text-sm font-medium text-gray-500">Integração</h3>
+                        <p class="text-3xl font-bold text-blue-600"><span id="total-integracao">0</span> pts</p>
+                    </div>
+                </div>
+                
+                <div class="bg-blue-100 p-4 rounded-lg text-center">
+                    <h3 class="text-sm font-medium text-gray-700">TOTAL GERAL</h3>
+                    <p class="text-4xl font-bold text-blue-700"><span id="total-geral">0</span> pontos</p>
+                </div>
+                
+                <div class="mt-6 text-center">
+                    <p class="text-gray-600">Obrigado por participar do Trote Solidário 2025!</p>
+                    <p class="text-gray-500 text-sm mt-2">"Construa vitórias fora de campo e jogue pela solidariedade"</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rodapé -->
+    <footer class="bg-blue-600 text-white mt-8">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-center md:text-left">© 2025 Uni-FACEF. Todos os direitos reservados.</p>
+                <div class="flex gap-4 mt-4 md:mt-0">
+                    <a href="#" class="text-white hover:text-gray-200">Política de Privacidade</a>
+                    <a href="#" class="text-white hover:text-gray-200">Termos de Uso</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
