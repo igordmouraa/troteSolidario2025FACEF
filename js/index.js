@@ -36,4 +36,45 @@ function calcularPontos() {
 function resetarCalculadora() {
     document.getElementById('calculadora-form').reset();
     document.getElementById('resultados').classList.add('hidden');
+    
+    // Resetar todas as barras de progresso
+    document.querySelectorAll('.progress-fill').forEach(progress => {
+        progress.style.width = '0%';
+        progress.className = 'progress-fill bg-red-500';
+    });
 }
+
+// Event listeners para inputs numéricos
+document.querySelectorAll('input[type="number"]').forEach(input => {
+    input.addEventListener('input', function() {
+        const max = parseInt(this.max) || 100;
+        const value = parseInt(this.value) || 0;
+        const percentage = Math.min((value / max) * 100, 100);
+        const progressId = 'progress-' + this.id;
+        const progressElement = document.getElementById(progressId);
+        
+        if (progressElement) {
+            progressElement.style.width = percentage + '%';
+            
+            // Mudar cor conforme preenchimento
+            if (percentage < 30) {
+                progressElement.className = 'progress-fill bg-red-500';
+            } else if (percentage < 70) {
+                progressElement.className = 'progress-fill bg-yellow-500';
+            } else {
+                progressElement.className = 'progress-fill bg-green-500';
+            }
+        }
+    });
+});
+
+// Event listener para o botão de calcular
+document.getElementById('calcular-btn').addEventListener('click', calcularPontos);
+
+// Event listener para o botão de resetar
+document.getElementById('resetar-btn').addEventListener('click', resetarCalculadora);
+
+// Inicialização - esconder a seção de resultados ao carregar a página
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('resultados').classList.add('hidden');
+});

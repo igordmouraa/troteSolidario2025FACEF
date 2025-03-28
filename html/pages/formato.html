@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../../assets/images/trote.jpg" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Ícones do Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <title>Uni-FACEF | Formato</title>
     <script>
         // Função para alternar o menu hambúrguer
@@ -13,90 +15,336 @@
             menu.classList.toggle('hidden');
         }
     </script>
+    <style>
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 2rem;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: #3b82f6;
+        }
+        .activity-item {
+            position: relative;
+            padding-left: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .activity-item i {
+            position: absolute;
+            left: 0;
+            top: 0.2rem;
+            color: #3b82f6;
+        }
+    </style>
 </head>
-<body class="bg-gray-100 font-sans">
+<body class="bg-gray-50 font-sans">
     <!-- Barra de navegação -->
-    <nav class="bg-blue-600 p-3 flex justify-between items-center">
-        <!-- Logo e Foto do Trote -->
-        <div class="flex-1 flex items-center gap-4">
-            <img src="/assets/images/trote.jpg" alt="Trote Solidário" class="w-12 h-12 rounded-lg">
-            <a href="/" class="text-xl font-bold text-white hover:text-gray-200">Uni-FACEF | Trote solidário 2025</a>
+    <nav class="bg-blue-600 shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex-1 flex items-center gap-4">
+                <img src="/assets/images/trote.jpg" alt="Trote Solidário" class="w-12 h-12 rounded-lg shadow-md">
+                <a href="/" class="text-xl font-bold text-white hover:text-gray-200 flex items-center">
+                    <i class="fas fa-hand-holding-heart mr-2"></i> Uni-FACEF | Trote Solidário 2025
+                </a>
+            </div>
+
+            <button id="menu-button" class="text-white focus:outline-none lg:hidden" onclick="toggleMenu()">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+
+            <div id="links-menu" class="hidden lg:flex lg:gap-6 lg:items-center">
+                <a href="/" class="text-white hover:text-gray-200 transition duration-300 flex items-center">
+                    <i class="fas fa-home mr-1"></i> Home
+                </a>
+                <a href="/html/pages/introducao.html" class="text-white hover:text-gray-200 transition duration-300 flex items-center">
+                    <i class="fas fa-info-circle mr-1"></i> Introdução
+                </a>
+                <a href="/html/pages/objetivo.html" class="text-white hover:text-gray-200 transition duration-300 flex items-center">
+                    <i class="fas fa-bullseye mr-1"></i> Objetivo
+                </a>
+                <a href="/html/pages/formato.html" class="text-white hover:text-gray-200 transition duration-300 flex items-center font-bold">
+                    <i class="fas fa-list-alt mr-1"></i> Formato
+                </a>
+                <a href="/html/pages/gincana.html" class="text-white hover:text-gray-200 transition duration-300 flex items-center">
+                    <i class="fas fa-trophy mr-1"></i> Gincana
+                </a>
+                <a href="/html/pages/integracao.html" class="text-white hover:text-gray-200 transition duration-300 flex items-center">
+                    <i class="fas fa-users mr-1"></i> Integração
+                </a>
+                <a href="/html/pages/observacoes.html" class="text-white hover:text-gray-200 transition duration-300 flex items-center">
+                    <i class="fas fa-clipboard-check mr-1"></i> Observações
+                </a>
+                <a href="/html/pages/calculadora.html" class="text-white hover:text-gray-200 transition duration-300 flex items-center">
+                    <i class="fas fa-calculator mr-1"></i> Calculadora
+                </a>
+            </div>
         </div>
 
-        <!-- Botão do menu hambúrguer (visível apenas em mobile) -->
-        <button id="menu-button" class="text-white focus:outline-none lg:hidden" onclick="toggleMenu()">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-            </svg>
-        </button>
-
-        <!-- Links do menu (visíveis apenas em desktop) -->
-        <div id="links-menu" class="hidden lg:flex lg:gap-6 lg:items-center">
-            <a href="/" class="text-white hover:text-gray-200 transition duration-300">Home</a>
-            <a href="/html/pages/introducao.html" class="text-white hover:text-gray-200 transition duration-300">Introdução</a>
-            <a href="/html/pages/objetivo.html" class="text-white hover:text-gray-200 transition duration-300">Objetivo</a>
-            <a href="/html/pages/formato.html" class="text-white hover:text-gray-200 transition duration-300">Formato</a>
-            <a href="/html/pages/gincana.html" class="text-white hover:text-gray-200 transition duration-300">Gincana</a>
-            <a href="/html/pages/integracao.html" class="text-white hover:text-gray-200 transition duration-300">Integração</a>
-            <a href="/html/pages/observacoes.html" class="text-white hover:text-gray-200 transition duration-300">Observações</a>
-            <a href="/html/pages/calculadora.html" class="text-white hover:text-gray-200 transition duration-300">Calculadora</a>
+        <!-- Menu vertical para mobile -->
+        <div id="mobile-menu" class="lg:hidden hidden bg-blue-700">
+            <div class="flex flex-col px-4 py-2">
+                <a href="/" class="text-white hover:bg-blue-600 py-2 px-4 rounded flex items-center">
+                    <i class="fas fa-home mr-2"></i> Home
+                </a>
+                <a href="/html/pages/introducao.html" class="text-white hover:bg-blue-600 py-2 px-4 rounded flex items-center">
+                    <i class="fas fa-info-circle mr-2"></i> Introdução
+                </a>
+                <a href="/html/pages/objetivo.html" class="text-white hover:bg-blue-600 py-2 px-4 rounded flex items-center">
+                    <i class="fas fa-bullseye mr-2"></i> Objetivo
+                </a>
+                <a href="/html/pages/formato.html" class="text-white hover:bg-blue-600 py-2 px-4 rounded flex items-center font-bold">
+                    <i class="fas fa-list-alt mr-2"></i> Formato
+                </a>
+                <a href="/html/pages/gincana.html" class="text-white hover:bg-blue-600 py-2 px-4 rounded flex items-center">
+                    <i class="fas fa-trophy mr-2"></i> Gincana
+                </a>
+                <a href="/html/pages/integracao.html" class="text-white hover:bg-blue-600 py-2 px-4 rounded flex items-center">
+                    <i class="fas fa-users mr-2"></i> Integração
+                </a>
+                <a href="/html/pages/observacoes.html" class="text-white hover:bg-blue-600 py-2 px-4 rounded flex items-center">
+                    <i class="fas fa-clipboard-check mr-2"></i> Observações
+                </a>
+                <a href="/html/pages/calculadora.html" class="text-white hover:bg-blue-600 py-2 px-4 rounded flex items-center">
+                    <i class="fas fa-calculator mr-2"></i> Calculadora
+                </a>
+            </div>
         </div>
     </nav>
 
-    <!-- Menu vertical para mobile -->
-    <div id="mobile-menu" class="lg:hidden hidden bg-blue-600">
-        <div class="flex flex-col px-4 py-2">
-            <a href="index.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Home</a>
-            <a href="/html/pages/introducao.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Introdução</a>
-            <a href="/html/pages/objetivo.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Objetivo</a>
-            <a href="/html/pages/formato.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Formato</a>
-            <a href="/html/pages/gincana.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Gincana</a>
-            <a href="/html/pages/integracao.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Integração</a>
-            <a href="/html/pages/observacoes.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Observações</a>
-            <a href="/html/pages/calculadora.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Calculadora</a>
+    <!-- Hero Section -->
+    <div class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-12">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">
+                <i class="fas fa-list-ol mr-2"></i> Formato do Evento
+            </h1>
+            <p class="text-xl md:text-2xl">Estrutura e organização do Trote Solidário 2025</p>
         </div>
     </div>
 
     <!-- Conteúdo principal -->
-    <div class="container mx-auto my-8 px-4 bg-white rounded-lg shadow-sm p-6">
-        <h2 class="text-3xl font-bold text-gray-800 mb-4">Formato</h2>
-        <p class="text-gray-700 mb-4">
-            A proposta para este ano são ações voltadas à comunidade, desde o ingresso do estudante na IES. Cada equipe será representada por 3 padrinhos, formados pelos chefes de departamentos dos cursos (ou um docente por ele indicado). Ressalta-se que as equipes compostas por apenas dois cursos precisam eleger um docente adicional, comum entre eles, para completar o número de padrinhos estabelecido. Os padrinhos vão atuar na orientação e condução das provas a serem cumpridas pelos calouros, contando com o apoio dos demais docentes do curso. Assim, o TROTE SOLIDÁRIO Uni-FACEF 2025 contará com duas etapas:
-        </p>
-        <table class="w-full border-collapse border border-gray-300 mb-4">
-            <tr class="bg-gray-200">
-                <td class="border border-gray-300 p-2 font-bold">1ª Etapa</td>
-                <td class="border border-gray-300 p-2">
-                    Gincana Solidária
-                    <ul class="list-disc list-inside mt-2">
-                        <li>ALIMENTOS E SUPLEMENTOS</li>
-                        <li>CAMPANHA DO LEITE</li>
-                        <li>DOAÇÃO DE SANGUE</li>
-                        <li>AÇÃO EM ENTIDADES SOCIAIS DA CIDADE DE FRANCA</li>
-                        <li>REGISTRO AUDIOVISUAL</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td class="border border-gray-300 p-2 font-bold">2ª Etapa</td>
-                <td class="border border-gray-300 p-2">
-                    Integração e Envolvimento
-                    <ul class="list-disc list-inside mt-2">
-                        <li>HOMENAGEM A ESPORTISTAS FRANCANOS</li>
-                        <li>MASCOTE DA EQUIPE</li>
-                        <li>CARACTERIZAÇÃO E ANIMAÇÃO</li>
-                        <li>ATIVIDADES RECREATIVAS E CARACTERIZAÇÃO</li>
-                        <li>APRESENTAÇÃO DAS AÇÕES SOCIAIS NAS ENTIDADES</li>
-                    </ul>
-                </td>
-            </tr>
-        </table>
+    <div class="container mx-auto my-12 px-4">
+        <!-- Seção de Estrutura -->
+        <section class="bg-white rounded-xl shadow-lg p-8 mb-12 card-hover">
+            <div class="flex items-center mb-6">
+                <div class="bg-blue-100 text-blue-600 p-3 rounded-full mr-4">
+                    <i class="fas fa-sitemap text-2xl"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-800">Estrutura Organizacional</h2>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-start mb-8">
+                <div class="md:w-1/3 mb-6 md:mb-0 md:pr-8">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                         alt="Equipe organizadora" 
+                         class="w-full h-auto rounded-lg shadow-md">
+                </div>
+                <div class="md:w-2/3">
+                    <p class="text-gray-700 mb-4 text-lg">
+                        Cada equipe será representada por 3 padrinhos, formados pelos chefes de departamentos dos cursos (ou um docente por ele indicado). Equipes com apenas dois cursos devem eleger um docente adicional para completar o trio de padrinhos.
+                    </p>
+                    <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
+                        <p class="text-gray-700">
+                            <i class="fas fa-info-circle text-blue-500 mr-2"></i> Os padrinhos são responsáveis pela orientação e condução das provas, com apoio dos demais docentes do curso.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <p class="text-gray-600 mb-4">A abertura oficial do Trote Solidário Uni-FACEF 2025 se dará no dia 18 de
-            fevereiro, às 18h15, no <strong>Auditório “Edna Maria Campanhol”</strong>, Unidade 2, com uma fala
-            de boas-vindas, ressaltando a importância da ação, e posteriormente será realizada a
-            apresentação do regulamento e o sorteio referente às cores, salas de entrega da
-            arrecadação e ordem de apresentação na noite de encerramento</p>
+        <!-- Seção de Etapas -->
+        <section class="bg-white rounded-xl shadow-lg p-8 mb-12 card-hover">
+            <div class="flex items-center mb-6">
+                <div class="bg-blue-100 text-blue-600 p-3 rounded-full mr-4">
+                    <i class="fas fa-calendar-check text-2xl"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-800">Etapas do Trote Solidário</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- 1ª Etapa -->
+                <div class="bg-blue-50 p-6 rounded-xl border-l-4 border-blue-500">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-600 text-white p-2 rounded-full mr-4">
+                            <span class="font-bold">1ª</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800">Gincana Solidária</h3>
+                    </div>
+                    
+                    <ul class="text-gray-700">
+                        <li class="activity-item">
+                            <i class="fas fa-utensils"></i>
+                            <strong>Alimentos e Suplementos:</strong> Arrecadação de itens básicos
+                        </li>
+                        <li class="activity-item">
+                            <i class="fas fa-wine-bottle"></i>
+                            <strong>Campanha do Leite:</strong> Doação de leite para instituições
+                        </li>
+                        <li class="activity-item">
+                            <i class="fas fa-tint"></i>
+                            <strong>Doação de Sangue:</strong> Incentivo à doação voluntária
+                        </li>
+                        <li class="activity-item">
+                            <i class="fas fa-hands-helping"></i>
+                            <strong>Ação em Entidades Sociais:</strong> Trabalho voluntário
+                        </li>
+                        <li class="activity-item">
+                            <i class="fas fa-video"></i>
+                            <strong>Registro Audiovisual:</strong> Documentação das ações
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- 2ª Etapa -->
+                <div class="bg-green-50 p-6 rounded-xl border-l-4 border-green-500">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-green-600 text-white p-2 rounded-full mr-4">
+                            <span class="font-bold">2ª</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800">Integração e Envolvimento</h3>
+                    </div>
+                    
+                    <ul class="text-gray-700">
+                        <li class="activity-item">
+                            <i class="fas fa-medal"></i>
+                            <strong>Homenagem a Esportistas Francanos:</strong> Reconhecimento a atletas locais
+                        </li>
+                        <li class="activity-item">
+                            <i class="fas fa-mask"></i>
+                            <strong>Mascote da Equipe:</strong> Criação de um símbolo representativo
+                        </li>
+                        <li class="activity-item">
+                            <i class="fas fa-tshirt"></i>
+                            <strong>Caracterização e Animação:</strong> Identidade visual da equipe
+                        </li>
+                        <li class="activity-item">
+                            <i class="fas fa-gamepad"></i>
+                            <strong>Atividades Recreativas:</strong> Provas e desafios divertidos
+                        </li>
+                        <li class="activity-item">
+                            <i class="fas fa-presentation"></i>
+                            <strong>Apresentação das Ações Sociais:</strong> Mostra dos trabalhos realizados
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Abertura -->
+        <section class="bg-white rounded-xl shadow-lg p-8 mb-12 card-hover">
+            <div class="flex items-center mb-6">
+                <div class="bg-blue-100 text-blue-600 p-3 rounded-full mr-4">
+                    <i class="fas fa-door-open text-2xl"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-800">Abertura Oficial</h2>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/3 mb-6 md:mb-0 md:pr-8">
+                    <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                         alt="Auditório" 
+                         class="w-full h-auto rounded-lg shadow-md">
+                </div>
+                <div class="md:w-2/3">
+                    <div class="bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-500 mb-4">
+                        <p class="text-gray-700">
+                            <i class="fas fa-calendar-day text-yellow-500 mr-2"></i> <strong>Data:</strong> 18 de fevereiro de 2025, às 18h15
+                        </p>
+                        <p class="text-gray-700 mt-2">
+                            <i class="fas fa-map-marker-alt text-yellow-500 mr-2"></i> <strong>Local:</strong> Auditório "Edna Maria Campanhol", Unidade 2
+                        </p>
+                    </div>
+                    
+                    <p class="text-gray-700 mb-4">
+                        O evento de abertura contará com uma fala de boas-vindas destacando a importância da ação solidária, apresentação do regulamento completo e o sorteio de:
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="bg-gray-100 p-3 rounded-lg text-center">
+                            <i class="fas fa-palette text-blue-500 text-2xl mb-2"></i>
+                            <p class="font-semibold">Cores das equipes</p>
+                        </div>
+                        <div class="bg-gray-100 p-3 rounded-lg text-center">
+                            <i class="fas fa-door-open text-blue-500 text-2xl mb-2"></i>
+                            <p class="font-semibold">Salas de entrega</p>
+                        </div>
+                        <div class="bg-gray-100 p-3 rounded-lg text-center">
+                            <i class="fas fa-list-ol text-blue-500 text-2xl mb-2"></i>
+                            <p class="font-semibold">Ordem de apresentação</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <div class="text-center bg-gradient-to-r from-blue-600 to-blue-700 p-12 rounded-xl shadow-lg">
+            <h2 class="text-3xl font-bold text-white mb-4">
+                <i class="fas fa-question-circle mr-2"></i> Dúvidas sobre o formato?
+            </h2>
+            <p class="text-gray-200 mb-6 text-xl max-w-3xl mx-auto">
+                Consulte a seção de Observações ou entre em contato com a coordenação do evento
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="/html/pages/observacoes.html" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300 flex items-center justify-center">
+                    <i class="fas fa-clipboard-check mr-2"></i> Observações
+                </a>
+                <a href="/html/pages/calculadora.html" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition duration-300 flex items-center justify-center">
+                    <i class="fas fa-calculator mr-2"></i> Calculadora
+                </a>
+            </div>
+        </div>
     </div>
+
+    <!-- Rodapé -->
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center">
+                        <img src="/assets/images/trote.jpg" alt="Trote Solidário" class="w-10 h-10 rounded-lg mr-3">
+                        <span class="text-xl font-bold">Uni-FACEF | Trote Solidário 2025</span>
+                    </div>
+                    <p class="text-gray-400 mt-2">Construa vitórias fora de campo e jogue pela solidariedade</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white text-2xl">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white text-2xl">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white text-2xl">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white text-2xl">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2025 Uni-FACEF. Todos os direitos reservados.</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Política de Privacidade</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Termos de Uso</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Contato</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
