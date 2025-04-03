@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../../assets/images/trote.jpg" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Ícones do Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <title>Uni-FACEF | Gincana</title>
     <script>
         // Função para alternar o menu hambúrguer
@@ -13,15 +15,86 @@
             menu.classList.toggle('hidden');
         }
     </script>
+    <style>
+        /* Animação suave para os cards */
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        /* Estilo para tabelas */
+        .table-container {
+            overflow-x: auto;
+            margin-bottom: 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th {
+            background-color: #3b82f6;
+            color: white;
+            font-weight: 600;
+            text-align: left;
+        }
+        
+        th, td {
+            padding: 0.75rem;
+            border: 1px solid #e5e7eb;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f9fafb;
+        }
+        
+        tr:hover {
+            background-color: #f3f4f6;
+        }
+        
+        /* Estilo para listas */
+        ul.custom-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        ul.custom-list li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        ul.custom-list li:before {
+            content: "•";
+            color: #3b82f6;
+            font-weight: bold;
+            display: inline-block;
+            width: 1.5em;
+            margin-left: -1.5em;
+        }
+        
+        ul.custom-list ul li:before {
+            content: "◦";
+            color: #6b7280;
+        }
+    </style>
 </head>
-<body class="bg-gray-100 font-sans">
+<body class="bg-gray-50 font-sans">
     <!-- Barra de navegação -->
-    <nav class="bg-blue-600 shadow-sm">
+    <nav class="bg-blue-600 shadow-lg">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
             <!-- Logo e Foto do Trote -->
             <div class="flex-1 flex items-center gap-4">
-                <img src="/assets/images/trote.jpg" alt="Trote Solidário" class="w-12 h-12 rounded-lg">
-                <a href="/" class="text-xl font-bold text-white hover:text-gray-200">Uni-FACEF | Trote solidário 2025</a>
+                <img src="/assets/images/trote.jpg" alt="Trote Solidário" class="w-12 h-12 rounded-lg shadow-md">
+                <a href="/" class="text-xl font-bold text-white hover:text-gray-200 flex items-center">
+                    <i class="fas fa-hand-holding-heart mr-2"></i> Uni-FACEF | Trote Solidário 2025
+                </a>
             </div>
 
             <!-- Botão do menu hambúrguer (visível apenas em mobile) -->
@@ -33,540 +106,784 @@
 
             <!-- Links do menu (visíveis apenas em desktop) -->
             <div id="links-menu" class="hidden lg:flex lg:gap-6 lg:items-center">
-                <a href="/" class="text-white hover:text-gray-200 transition duration-300">Home</a>
-                <a href="/html/pages/introducao.html" class="text-white hover:text-gray-200 transition duration-300">Introdução</a>
-                <a href="/html/pages/objetivo.html" class="text-white hover:text-gray-200 transition duration-300">Objetivo</a>
-                <a href="/html/pages/formato.html" class="text-white hover:text-gray-200 transition duration-300">Formato</a>
-                <a href="/html/pages/gincana.html" class="text-white hover:text-gray-200 transition duration-300">Gincana</a>
-                <a href="/html/pages/integracao.html" class="text-white hover:text-gray-200 transition duration-300">Integração</a>
-                <a href="/html/pages/observacoes.html" class="text-white hover:text-gray-200 transition duration-300">Observações</a>
-                <a href="/html/pages/calculadora.html" class="text-white hover:text-gray-200 transition duration-300">Calculadora</a>
+                <a href="/" class="text-white hover:text-gray-200 transition duration-300 flex items-center">
+                    <i class="fas fa-home mr-1"></i> Home
+                </a>
+                <a href="/html/pages/introducao.html" class="text-white hover:text-gray-200 transition duration-300 flex items-center">
+                    <i class="fas fa-info-circle mr-1"></i> Introdução
+                </a>
+                <a href="/html/pages/objetivo.html" class="text-white hover:text-gray-200 transition duration-300 flex items-center">
+                    <i class="fas fa-bullseye mr-1"></i> Objetivo
+                </a>
+                <a href="/html/pages/formato.html" class="text-white hover:text-gray-200 transition duration-300 flex items-center">
+                    <i class="fas fa-list-alt mr-1"></i> Formato
+                </a>
+                <a href="/html/pages/gincana.html" class="text-white hover:text-gray-200 transition duration-300 flex items-center">
+                    <i class="fas fa-trophy mr-1"></i> Gincana
+                </a>
+                <a href="/html/pages/integracao.html" class="text-white hover:text-gray-200 transition duration-300 flex items-center">
+                    <i class="fas fa-users mr-1"></i> Integração
+                </a>
+                <a href="/html/pages/observacoes.html" class="text-white hover:text-gray-200 transition duration-300 flex items-center">
+                    <i class="fas fa-clipboard-check mr-1"></i> Observações
+                </a>
+                <a href="/html/pages/calculadora.html" class="text-white hover:text-gray-200 transition duration-300 flex items-center">
+                    <i class="fas fa-calculator mr-1"></i> Calculadora
+                </a>
             </div>
         </div>
 
         <!-- Menu vertical para mobile -->
-        <div id="mobile-menu" class="lg:hidden hidden bg-blue-600">
+        <div id="mobile-menu" class="lg:hidden hidden bg-blue-700">
             <div class="flex flex-col px-4 py-2">
-                <a href="/" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Home</a>
-                <a href="/html/pages/introducao.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Introdução</a>
-                <a href="/html/pages/objetivo.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Objetivo</a>
-                <a href="/html/pages/formato.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Formato</a>
-                <a href="/html/pages/gincana.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Gincana</a>
-                <a href="/html/pages/integracao.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Integração</a>
-                <a href="/html/pages/observacoes.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Observações</a>
-                <a href="/html/pages/calculadora.html" class="text-white hover:bg-blue-700 py-2 px-4 rounded">Calculadora</a>
+                <a href="/" class="text-white hover:bg-blue-600 py-2 px-4 rounded flex items-center">
+                    <i class="fas fa-home mr-2"></i> Home
+                </a>
+                <a href="/html/pages/introducao.html" class="text-white hover:bg-blue-600 py-2 px-4 rounded flex items-center">
+                    <i class="fas fa-info-circle mr-2"></i> Introdução
+                </a>
+                <a href="/html/pages/objetivo.html" class="text-white hover:bg-blue-600 py-2 px-4 rounded flex items-center">
+                    <i class="fas fa-bullseye mr-2"></i> Objetivo
+                </a>
+                <a href="/html/pages/formato.html" class="text-white hover:bg-blue-600 py-2 px-4 rounded flex items-center">
+                    <i class="fas fa-list-alt mr-2"></i> Formato
+                </a>
+                <a href="/html/pages/gincana.html" class="text-white hover:bg-blue-600 py-2 px-4 rounded flex items-center">
+                    <i class="fas fa-trophy mr-2"></i> Gincana
+                </a>
+                <a href="/html/pages/integracao.html" class="text-white hover:bg-blue-600 py-2 px-4 rounded flex items-center">
+                    <i class="fas fa-users mr-2"></i> Integração
+                </a>
+                <a href="/html/pages/observacoes.html" class="text-white hover:bg-blue-600 py-2 px-4 rounded flex items-center">
+                    <i class="fas fa-clipboard-check mr-2"></i> Observações
+                </a>
+                <a href="/html/pages/calculadora.html" class="text-white hover:bg-blue-600 py-2 px-4 rounded flex items-center">
+                    <i class="fas fa-calculator mr-2"></i> Calculadora
+                </a>
             </div>
         </div>
     </nav>
 
+    <!-- Hero Section -->
+    <div class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-12">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">
+                <i class="fas fa-trophy mr-2"></i> Gincana Solidária
+            </h1>
+            <p class="text-xl md:text-2xl mb-6">Conheça as regras, equipes e desafios da competição que une solidariedade e integração</p>
+        </div>
+    </div>
+
     <!-- Conteúdo principal -->
-    <div class="container mx-auto my-8 px-4">
+    <div class="container mx-auto my-12 px-4">
         <!-- Seção 1: Equipes -->
-        <section class="bg-white rounded-lg shadow-sm p-6 mb-8">
-            <h2 class="text-2xl font-bold text-gray-800 mb-4">1.1. Equipes</h2>
-            <p class="text-gray-700 mb-4">
-                Serão formadas equipes pela Reitoria, conforme Tabelas 1 e 2, de acordo com a quantidade de estudantes matriculados em cada curso (Tabela 2), de forma a garantir a equidade entre as equipes.
-            </p>
-            <p class="text-gray-700 mb-4">
-                <strong>ATENÇÃO:</strong> Cada equipe será reconhecida por uma cor (Laranja, Preta, Roxa, Verde, Vermelha), a ser sorteada no dia da divulgação do Regulamento em 18/02/2025. As equipes deverão trabalhar suas respectivas cores, também na noite de encerramento do TROTE SOLIDÁRIO Uni-FACEF 2025, utilizando sua respectiva cor no vestuário e adereços. Cada equipe que tiver os seus membros bem caracterizados com sua respectiva cor ganhará 1.000 pontos, após avaliação do corpo de jurados.
-            </p>
-            <p class="text-gray-700 mb-4">
-                Cabe destacar ainda, que a ordem das atividades, bem como da disposição das salas para entrega dos alimentos, e de apresentação no Encerramento, seguirá a ordem alfabética das cores.
-            </p>
-            <p class="text-gray-700 mb-4">
-                É importante lembrar que haverá registro de presença para fins de emissão de certificados.
-            </p>
-            <p class="text-gray-700 mb-4">
-                As equipes serão responsáveis pelo planejamento, arrecadação e armazenamento prévio dos itens aqui relacionados. A entrega dos alimentos, dos suplementos alimentares, bem como dos comprovantes de realização das provas da Doação de Sangue e da Ação Social, para fins de pontuação, deverá ocorrer única e exclusivamente, das 8h às 10h00, no dia 02/04/2025 (quarta-feira), na Unidade I (Av. Major Nicácio, 2433), conforme determinação deste Regulamento.
-            </p>
-            <h3 class="text-xl font-bold text-gray-800 mb-4">Tabela 1 – Equipes e Padrinhos</h3>
-            <div class="overflow-x-auto">
-                <table class="w-full border-collapse border border-gray-300 mb-4">
-                    <thead class="bg-gray-200">
-                        <tr>
-                            <th class="border border-gray-300 p-2">Equipe</th>
-                            <th class="border border-gray-300 p-2">Cursos</th>
-                            <th class="border border-gray-300 p-2">Alunos</th>
-                            <th class="border border-gray-300 p-2">Padrinhos</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="border border-gray-300 p-2">Laranja</td>
-                            <td class="border border-gray-300 p-2">Matemática, Letras (Português/Inglês), Engenharia de Software</td>
-                            <td class="border border-gray-300 p-2">97</td>
-                            <td class="border border-gray-300 p-2">EM BREVE</td>
-                        </tr>
-                        <tr>
-                            <td class="border border-gray-300 p-2">Preta</td>
-                            <td class="border border-gray-300 p-2">Medicina, Enfermagem</td>
-                            <td class="border border-gray-300 p-2">103</td>
-                            <td class="border border-gray-300 p-2">EM BREVE</td>
-                        </tr>
-                        <tr>
-                            <td class="border border-gray-300 p-2">Roxa</td>
-                            <td class="border border-gray-300 p-2">Comunicação Social – PP, Sistemas de Informação, Ciência da Computação</td>
-                            <td class="border border-gray-300 p-2">102</td>
-                            <td class="border border-gray-300 p-2">EM BREVE</td>
-                        </tr>
-                        <tr>
-                            <td class="border border-gray-300 p-2">Verde</td>
-                            <td class="border border-gray-300 p-2">Engenharia de Produção, Engenharia Civil, Psicologia</td>
-                            <td class="border border-gray-300 p-2">88</td>
-                            <td class="border border-gray-300 p-2">EM BREVE</td>
-                        </tr>
-                        <tr>
-                            <td class="border border-gray-300 p-2">Vermelha</td>
-                            <td class="border border-gray-300 p-2">Administração, Ciências Contábeis</td>
-                            <td class="border border-gray-300 p-2">93</td>
-                            <td class="border border-gray-300 p-2">EM BREVE</td>
-                        </tr>
-                    </tbody>
-                </table>
+        <section class="bg-white rounded-xl shadow-lg p-8 mb-12 card-hover">
+            <div class="flex items-center mb-6">
+                <div class="bg-blue-100 text-blue-600 p-3 rounded-full mr-4">
+                    <i class="fas fa-users text-xl"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-800">1.1. Equipes</h2>
             </div>
-            <h3 class="text-xl font-bold text-gray-800 mb-4">Tabela 2 – Cursos e alunos</h3>
-            <div class="overflow-x-auto">
-                <table class="w-full border-collapse border border-gray-300 mb-4">
-                    <thead class="bg-gray-200">
-                        <tr>
-                            <th class="border border-gray-300 p-2">CURSO</th>
-                            <th class="border border-gray-300 p-2">ALUNOS</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="border border-gray-300 p-2">Administração</td>
-                            <td class="border border-gray-300 p-2">70</td>
-                        </tr>
-                        <tr>
-                            <td class="border border-gray-300 p-2">Ciência da Computação</td>
-                            <td class="border border-gray-300 p-2">36</td>
-                        </tr>
-                        <tr>
-                            <td class="border border-gray-300 p-2">Ciências Contábeis</td>
-                            <td class="border border-gray-300 p-2">23</td>
-                        </tr>
-                        <tr>
-                            <td class="border border-gray-300 p-2">Comunicação Social – Publ. e Propaganda</td>
-                            <td class="border border-gray-300 p-2">37</td>
-                        </tr>
-                        <tr>
-                            <td class="border border-gray-300 p-2">Enfermagem</td>
-                            <td class="border border-gray-300 p-2">19</td>
-                        </tr>
-                        <tr>
-                            <td class="border border-gray-300 p-2">Engenharia Civil</td>
-                            <td class="border border-gray-300 p-2">20</td>
-                        </tr>
-                        <tr>
-                            <td class="border border-gray-300 p-2">Engenharia de Produção</td>
-                            <td class="border border-gray-300 p-2">09</td>
-                        </tr>
-                        <tr>
-                            <td class="border border-gray-300 p-2">Engenharia de Software</td>
-                            <td class="border border-gray-300 p-2">60</td>
-                        </tr>
-                        <tr>
-                            <td class="border border-gray-300 p-2">Letras (Port./Inglês)</td>
-                            <td class="border border-gray-300 p-2">22</td>
-                        </tr>
-                        <tr>
-                            <td class="border border-gray-300 p-2">Matemática</td>
-                            <td class="border border-gray-300 p-2">16</td>
-                        </tr>
-                        <tr>
-                            <td class="border border-gray-300 p-2">Medicina</td>
-                            <td class="border border-gray-300 p-2">84</td>
-                        </tr>
-                        <tr>
-                            <td class="border border-gray-300 p-2">Psicologia</td>
-                            <td class="border border-gray-300 p-2">60</td>
-                        </tr>
-                        <tr>
-                            <td class="border border-gray-300 p-2">Sistema de Informação</td>
-                            <td class="border border-gray-300 p-2">29</td>
-                        </tr>
-                    </tbody>
-                </table>
+            
+            <div class="space-y-4 text-gray-700">
+                <p>
+                    Serão formadas equipes pela Reitoria, conforme Tabelas 1 e 2, de acordo com a quantidade de estudantes matriculados em cada curso (Tabela 2), de forma a garantir a equidade entre as equipes.
+                </p>
+                
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-exclamation-triangle text-yellow-400"></i>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-yellow-700">
+                                <strong>ATENÇÃO:</strong> Cada equipe será reconhecida por uma cor (Laranja, Preta, Roxa, Verde, Vermelha), a ser sorteada no dia da divulgação do Regulamento em 18/02/2025. As equipes deverão trabalhar suas respectivas cores, também na noite de encerramento do TROTE SOLIDÁRIO Uni-FACEF 2025, utilizando sua respectiva cor no vestuário e adereços. Cada equipe que tiver os seus membros bem caracterizados com sua respectiva cor ganhará 1.000 pontos, após avaliação do corpo de jurados.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <p>
+                    Cabe destacar ainda, que a ordem das atividades, bem como da disposição das salas para entrega dos alimentos, e de apresentação no Encerramento, seguirá a ordem alfabética das cores.
+                </p>
+                
+                <p>
+                    É importante lembrar que haverá registro de presença para fins de emissão de certificados.
+                </p>
+                
+                <p>
+                    As equipes serão responsáveis pelo planejamento, arrecadação e armazenamento prévio dos itens aqui relacionados. A entrega dos alimentos, dos suplementos alimentares, bem como dos comprovantes de realização das provas da Doação de Sangue e da Ação Social, para fins de pontuação, deverá ocorrer única e exclusivamente, das 8h às 10h00, no dia 02/04/2025 (quarta-feira), na Unidade I (Av. Major Nicácio, 2433), conforme determinação deste Regulamento.
+                </p>
             </div>
-            <p class="text-gray-700 mb-4">
-                Fonte: Sistema Acadêmico/Uni-FACEF, em 18/02/2025
-            </p>
+            
+            <div class="mt-8">
+                <h3 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+                    <i class="fas fa-table mr-2 text-blue-500"></i> Tabela 1 – Equipes e Padrinhos
+                </h3>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Equipe</th>
+                                <th>Cursos</th>
+                                <th>Alunos</th>
+                                <th>Padrinhos</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="font-semibold text-orange-500">Laranja</span></td>
+                                <td>Matemática, Letras (Português/Inglês), Engenharia de Software</td>
+                                <td>97</td>
+                                <td>EM BREVE</td>
+                            </tr>
+                            <tr>
+                                <td><span class="font-semibold text-gray-800">Preta</span></td>
+                                <td>Medicina, Enfermagem</td>
+                                <td>103</td>
+                                <td>EM BREVE</td>
+                            </tr>
+                            <tr>
+                                <td><span class="font-semibold text-purple-600">Roxa</span></td>
+                                <td>Comunicação Social – PP, Sistemas de Informação, Ciência da Computação</td>
+                                <td>102</td>
+                                <td>EM BREVE</td>
+                            </tr>
+                            <tr>
+                                <td><span class="font-semibold text-green-600">Verde</span></td>
+                                <td>Engenharia de Produção, Engenharia Civil, Psicologia</td>
+                                <td>88</td>
+                                <td>EM BREVE</td>
+                            </tr>
+                            <tr>
+                                <td><span class="font-semibold text-red-600">Vermelha</span></td>
+                                <td>Administração, Ciências Contábeis</td>
+                                <td>93</td>
+                                <td>EM BREVE</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h3 class="text-2xl font-bold text-gray-800 mb-4 flex items-center mt-8">
+                    <i class="fas fa-table mr-2 text-blue-500"></i> Tabela 2 – Cursos e alunos
+                </h3>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>CURSO</th>
+                                <th>ALUNOS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Administração</td>
+                                <td>70</td>
+                            </tr>
+                            <tr>
+                                <td>Ciência da Computação</td>
+                                <td>36</td>
+                            </tr>
+                            <tr>
+                                <td>Ciências Contábeis</td>
+                                <td>23</td>
+                            </tr>
+                            <tr>
+                                <td>Comunicação Social – Publ. e Propaganda</td>
+                                <td>37</td>
+                            </tr>
+                            <tr>
+                                <td>Enfermagem</td>
+                                <td>19</td>
+                            </tr>
+                            <tr>
+                                <td>Engenharia Civil</td>
+                                <td>20</td>
+                            </tr>
+                            <tr>
+                                <td>Engenharia de Produção</td>
+                                <td>09</td>
+                            </tr>
+                            <tr>
+                                <td>Engenharia de Software</td>
+                                <td>60</td>
+                            </tr>
+                            <tr>
+                                <td>Letras (Port./Inglês)</td>
+                                <td>22</td>
+                            </tr>
+                            <tr>
+                                <td>Matemática</td>
+                                <td>16</td>
+                            </tr>
+                            <tr>
+                                <td>Medicina</td>
+                                <td>84</td>
+                            </tr>
+                            <tr>
+                                <td>Psicologia</td>
+                                <td>60</td>
+                            </tr>
+                            <tr>
+                                <td>Sistema de Informação</td>
+                                <td>29</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <p class="text-gray-500 text-sm mt-4">
+                    Fonte: Sistema Acadêmico/Uni-FACEF, em 18/02/2025
+                </p>
+            </div>
         </section>
 
         <!-- Seção 2: Alimentos e Suplementos -->
-        <section class="bg-white rounded-lg shadow-sm p-6 mb-8">
-            <h2 class="text-2xl font-bold text-gray-800 mb-4"> ALIMENTOS E SUPLEMENTOS – METAS POR EQUIPE</h2>
-            <p class="text-gray-700 mb-4">
-                Esta etapa consiste na arrecadação/doação, pelos calouros, de itens alimentícios que serão posteriormente entregues a entidades e instituições francanas de assistência social e suplementos alimentares destinados às atividades dos Voluntários da Saúde, que atuam no Hospital de Câncer de Franca.
-            </p>
-            <p class="text-gray-700 mb-4">
-                Para este ano a meta de arrecadação é composta por um Kit Alimentação por estudante e um Suplemento Alimentar para cada dois estudantes da equipe:
-            </p>
-            <ul class="list-disc list-inside text-gray-700 mb-4">
-                <li>Kits Alimentação contendo NECESSARIAMENTE os seguintes itens e as respectivas quantidades abaixo relacionadas (por kit):</li>
-                <ul class="list-disc list-inside ml-6">
-                    <li>2 pacotes de 5kg de arroz - tipo 1;</li>
-                    <li>2 pacotes de 2kg (ou 4 pacotes de 1kg) de feijão - tipo carioca;</li>
-                    <li>3 unidades óleo de soja (1 litro ou 900ml cada); e</li>
-                    <li>6 pacotes de macarrão de 400/500g (ou 3 pacotes de 1 Kg).</li>
-                </ul>
-                <li>Suplementos alimentares, conforme especificação:</li>
-                <ul class="list-disc list-inside ml-6">
-                    <li>Lata de 400 gramas, adulto, preferencialmente sabor baunilha, das marcas:</li>
-                    <ul class="list-disc list-inside ml-6">
-                        <li>Ensure</li>
-                        <li>Nutren 1.0</li>
+        <section class="bg-white rounded-xl shadow-lg p-8 mb-12 card-hover">
+            <div class="flex items-center mb-6">
+                <div class="bg-blue-100 text-blue-600 p-3 rounded-full mr-4">
+                    <i class="fas fa-utensils text-xl"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-800"> ALIMENTOS E SUPLEMENTOS – METAS POR EQUIPE</h2>
+            </div>
+            
+            <div class="space-y-4 text-gray-700">
+                <p>
+                    Esta etapa consiste na arrecadação/doação, pelos calouros, de itens alimentícios que serão posteriormente entregues a entidades e instituições francanas de assistência social e suplementos alimentares destinados às atividades dos Voluntários da Saúde, que atuam no Hospital de Câncer de Franca.
+                </p>
+                
+                <p>
+                    Para este ano a meta de arrecadação é composta por um Kit Alimentação por estudante e um Suplemento Alimentar para cada dois estudantes da equipe:
+                </p>
+                
+                <ul class="custom-list space-y-2">
+                    <li>Kits Alimentação contendo NECESSARIAMENTE os seguintes itens e as respectivas quantidades abaixo relacionadas (por kit):</li>
+                    <ul class="custom-list ml-6 space-y-1">
+                        <li>2 pacotes de 5kg de arroz - tipo 1;</li>
+                        <li>2 pacotes de 2kg (ou 4 pacotes de 1kg) de feijão - tipo carioca;</li>
+                        <li>3 unidades óleo de soja (1 litro ou 900ml cada); e</li>
+                        <li>6 pacotes de macarrão de 400/500g (ou 3 pacotes de 1 Kg).</li>
+                    </ul>
+                    <li>Suplementos alimentares, conforme especificação:</li>
+                    <ul class="custom-list ml-6 space-y-1">
+                        <li>Lata de 400 gramas, adulto, preferencialmente sabor baunilha, das marcas:</li>
+                        <ul class="custom-list ml-6 space-y-1">
+                            <li>Ensure</li>
+                            <li>Nutren 1.0</li>
+                        </ul>
                     </ul>
                 </ul>
-            </ul>
-            <p class="text-gray-700 mb-4">
-                Meta: 01 (um) Kit Alimentação por estudante e 01 (um) Suplemento Alimentar para cada dois estudantes da equipe.
-            </p>
-            <p class="text-gray-700 mb-4">
-                * cada Kit Alimentação deverá vir embalado em plástico transparente
-            </p>
-            <p class="text-gray-700 mb-4">
-                ** as latas de suplemento não devem ser embaladas junto com o kit alimentação
-            </p>
-            <p class="text-gray-700 mb-4">
-                *** na ocorrência da arrecadação/doação de lata de Ensure / Nutren 1.0 com peso superior, a mesma pontuará apenas como uma doação.
-            </p>
-            <p class="text-gray-700 mb-4">
-                ****não são pontuados macarrão do tipo instantâneo
-            </p>
-            <p class="text-gray-700 mb-4">
-                A pontuação poderá, ainda, ser fragmentada em caso de não cumprimento da meta total, com escalas em 80%, 50% e 20% da quantidade inicialmente estabelecida.
-            </p>
-            <h3 class="text-xl font-bold text-gray-800 mb-4">Tabela 3 – Metas por Equipe</h3>
-            <div class="overflow-x-auto">
-                <table class="w-full border-collapse border border-gray-300 mb-4">
-                    <thead class="bg-gray-200">
-                        <tr>
-                            <th class="border border-gray-300 p-2">Equipe</th>
-                            <th class="border border-gray-300 p-2">Cursos</th>
-                            <th class="border border-gray-300 p-2">Meta</th>
-                            <th class="border border-gray-300 p-2">80%</th>
-                            <th class="border border-gray-300 p-2">50%</th>
-                            <th class="border border-gray-300 p-2">20%</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="border border-gray-300 p-2">Laranja</td>
-                            <td class="border border-gray-300 p-2">Matemática, Letras (Português/Inglês), Engenharia de Software</td>
-                            <td class="border border-gray-300 p-2">97 Kits / 49 Supl.</td>
-                            <td class="border border-gray-300 p-2">78 Kits / 39 Supl.</td>
-                            <td class="border border-gray-300 p-2">49 Kits / 25 Supl.</td>
-                            <td class="border border-gray-300 p-2">19 Kits / 10 Supl.</td>
-                        </tr>
-                        <tr>
-                            <td class="border border-gray-300 p-2">Preta</td>
-                            <td class="border border-gray-300 p-2">Medicina, Enfermagem</td>
-                            <td class="border border-gray-300 p-2">103 Kits / 52 Supl.</td>
-                            <td class="border border-gray-300 p-2">82 Kits / 42 Supl.</td>
-                            <td class="border border-gray-300 p-2">52 Kits / 26 Supl.</td>
-                            <td class="border border-gray-300 p-2">21 Kits / 10 Supl.</td>
-                        </tr>
-                        <tr>
-                            <td class="border border-gray-300 p-2">Roxa</td>
-                            <td class="border border-gray-300 p-2">Comunicação Social – PP, Sistemas de Informação, Ciência da Computação</td>
-                            <td class="border border-gray-300 p-2">102 Kits / 51 Supl.</td>
-                            <td class="border border-gray-300 p-2">82 Kits / 41 Supl.</td>
-                            <td class="border border-gray-300 p-2">51 Kits / 26 Supl.</td>
-                            <td class="border border-gray-300 p-2">20 Kits / 10 Supl.</td>
-                        </tr>
-                        <tr>
-                            <td class="border border-gray-300 p-2">Verde</td>
-                            <td class="border border-gray-300 p-2">Engenharia de Produção, Engenharia Civil, Psicologia</td>
-                            <td class="border border-gray-300 p-2">88 Kits / 44 Supl.</td>
-                            <td class="border border-gray-300 p-2">70 Kits / 35 Supl.</td>
-                            <td class="border border-gray-300 p-2">44 Kits / 22 Supl.</td>
-                            <td class="border border-gray-300 p-2">18 Kits / 9 Supl.</td>
-                        </tr>
-                        <tr>
-                            <td class="border border-gray-300 p-2">Vermelha</td>
-                            <td class="border border-gray-300 p-2">Administração, Ciências Contábeis</td>
-                            <td class="border border-gray-300 p-2">93 Kits / 47 Supl.</td>
-                            <td class="border border-gray-300 p-2">74 Kits / 38 Supl.</td>
-                            <td class="border border-gray-300 p-2">47 Kits / 24 Supl.</td>
-                            <td class="border border-gray-300 p-2">19 Kits / 9 Supl.</td>
-                        </tr>
-                    </tbody>
-                </table>
+                
+                <p class="font-semibold">
+                    Meta: 01 (um) Kit Alimentação por estudante e 01 (um) Suplemento Alimentar para cada dois estudantes da equipe.
+                </p>
+                
+                <div class="bg-blue-50 border-l-4 border-blue-400 p-4">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-info-circle text-blue-400"></i>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-blue-700">
+                                * cada Kit Alimentação deverá vir embalado em plástico transparente
+                            </p>
+                            <p class="text-sm text-blue-700 mt-1">
+                                ** as latas de suplemento não devem ser embaladas junto com o kit alimentação
+                            </p>
+                            <p class="text-sm text-blue-700 mt-1">
+                                *** na ocorrência da arrecadação/doação de lata de Ensure / Nutren 1.0 com peso superior, a mesma pontuará apenas como uma doação.
+                            </p>
+                            <p class="text-sm text-blue-700 mt-1">
+                                ****não são pontuados macarrão do tipo instantâneo
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <p>
+                    A pontuação poderá, ainda, ser fragmentada em caso de não cumprimento da meta total, com escalas em 80%, 50% e 20% da quantidade inicialmente estabelecida.
+                </p>
             </div>
-            <p class="text-gray-700 mb-4">
-                * conforme sorteio realizado em 18/02/2025
-            </p>
-            <h3 class="text-xl font-bold text-gray-800 mb-4">ESCALA DE PONTUAÇÕES</h3>
-            <ul class="list-disc list-inside text-gray-700 mb-4">
-                <li>TAREFA CUMPRIDA COM O TOTAL DA META = 5.000 PONTOS</li>
-                <li>Entrega de, no mínimo, 80% dos itens = 4.000 pontos</li>
-                <li>Entrega de, no mínimo, 50% dos itens = 2.500 pontos</li>
-                <li>Entrega de, no mínimo, 20% dos itens = 1.000 pontos</li>
-                <li>Abaixo de 20%, a equipe não pontua.</li>
-            </ul>
-            <p class="text-gray-700 mb-4">
-                Cada estudante que cumprir sua participação na prova de arrecadação com a entrega de “1/2 (meio) Suplemento” e 01 (um) Kit Alimentação terá direito a um certificado com 30 horas-atividade. Na incidência de o estudante dobrar sua doação, a quantidade de horas-atividade também será dobrada até um limite de 60 horas. O Controle dos estudantes que possuem direito ao certificado deverá ser feito pelos líderes de cada curso, que deverão entregar uma lista com os nomes dos estudantes e as respectivas quantidades doadas no momento da entrega das doações.
-            </p>
-            <p class="text-gray-700 mb-4">
-                Os alunos serão responsáveis pela arrecadação, controle, armazenamento prévio e entrega dos itens arrecadados. O representante da turma realizará a entrega dos itens correspondentes ao seu curso no dia 02/04/2025 (quarta-feira), das 08h00 às 10h00, na Unidade I (av. Major Nicácio, 2433), em salas definidas por sorteio. Também, deverá ser entregue uma lista dos alunos doadores para fins de controle dos certificados das horas-atividade.
-            </p>
-            <h3 class="text-xl font-bold text-gray-800 mb-4">Tabela 3 – Ordem do Sorteio</h3>
-            <div class="overflow-x-auto">
-                <table class="w-full border-collapse border border-gray-300 mb-4">
-                    <thead class="bg-gray-200">
-                        <tr>
-                            <th class="border border-gray-300 p-2">Cor</th>
-                            <th class="border border-gray-300 p-2">Sala de Entrega</th>
-                            <th class="border border-gray-300 p-2">Apresentação</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="border border-gray-300 p-2">Laranja</td>
-                            <td class="border border-gray-300 p-2">18</td>
-                            <td class="border border-gray-300 p-2">1ª Equipe</td>
-                        </tr>
-                        <tr>
-                            <td class="border border-gray-300 p-2">Preta</td>
-                            <td class="border border-gray-300 p-2">19</td>
-                            <td class="border border-gray-300 p-2">2ª Equipe</td>
-                        </tr>
-                        <tr>
-                            <td class="border border-gray-300 p-2">Roxa</td>
-                            <td class="border border-gray-300 p-2">20</td>
-                            <td class="border border-gray-300 p-2">3ª Equipe</td>
-                        </tr>
-                        <tr>
-                            <td class="border border-gray-300 p-2">Verde</td>
-                            <td class="border border-gray-300 p-2">21</td>
-                            <td class="border border-gray-300 p-2">4ª Equipe</td>
-                        </tr>
-                        <tr>
-                            <td class="border border-gray-300 p-2">Vermelha</td>
-                            <td class="border border-gray-300 p-2">22</td>
-                            <td class="border border-gray-300 p-2">5ª Equipe</td>
-                        </tr>
-                    </tbody>
-                </table>
+            
+            <div class="mt-8">
+                <h3 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+                    <i class="fas fa-table mr-2 text-blue-500"></i> Tabela 3 – Metas por Equipe
+                </h3>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Equipe</th>
+                                <th>Cursos</th>
+                                <th>Meta</th>
+                                <th>80%</th>
+                                <th>50%</th>
+                                <th>20%</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="font-semibold text-orange-500">Laranja</span></td>
+                                <td>Matemática, Letras (Português/Inglês), Engenharia de Software</td>
+                                <td>97 Kits / 49 Supl.</td>
+                                <td>78 Kits / 39 Supl.</td>
+                                <td>49 Kits / 25 Supl.</td>
+                                <td>19 Kits / 10 Supl.</td>
+                            </tr>
+                            <tr>
+                                <td><span class="font-semibold text-gray-800">Preta</span></td>
+                                <td>Medicina, Enfermagem</td>
+                                <td>103 Kits / 52 Supl.</td>
+                                <td>82 Kits / 42 Supl.</td>
+                                <td>52 Kits / 26 Supl.</td>
+                                <td>21 Kits / 10 Supl.</td>
+                            </tr>
+                            <tr>
+                                <td><span class="font-semibold text-purple-600">Roxa</span></td>
+                                <td>Comunicação Social – PP, Sistemas de Informação, Ciência da Computação</td>
+                                <td>102 Kits / 51 Supl.</td>
+                                <td>82 Kits / 41 Supl.</td>
+                                <td>51 Kits / 26 Supl.</td>
+                                <td>20 Kits / 10 Supl.</td>
+                            </tr>
+                            <tr>
+                                <td><span class="font-semibold text-green-600">Verde</span></td>
+                                <td>Engenharia de Produção, Engenharia Civil, Psicologia</td>
+                                <td>88 Kits / 44 Supl.</td>
+                                <td>70 Kits / 35 Supl.</td>
+                                <td>44 Kits / 22 Supl.</td>
+                                <td>18 Kits / 9 Supl.</td>
+                            </tr>
+                            <tr>
+                                <td><span class="font-semibold text-red-600">Vermelha</span></td>
+                                <td>Administração, Ciências Contábeis</td>
+                                <td>93 Kits / 47 Supl.</td>
+                                <td>74 Kits / 38 Supl.</td>
+                                <td>47 Kits / 24 Supl.</td>
+                                <td>19 Kits / 9 Supl.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <p class="text-gray-500 text-sm">
+                    * conforme sorteio realizado em 18/02/2025
+                </p>
+                
+                <h3 class="text-2xl font-bold text-gray-800 mb-4 flex items-center mt-8">
+                    <i class="fas fa-star mr-2 text-yellow-500"></i> ESCALA DE PONTUAÇÕES
+                </h3>
+                
+                <ul class="custom-list space-y-2">
+                    <li class="font-semibold">TAREFA CUMPRIDA COM O TOTAL DA META = 5.000 PONTOS</li>
+                    <li>Entrega de, no mínimo, 80% dos itens = 4.000 pontos</li>
+                    <li>Entrega de, no mínimo, 50% dos itens = 2.500 pontos</li>
+                    <li>Entrega de, no mínimo, 20% dos itens = 1.000 pontos</li>
+                    <li>Abaixo de 20%, a equipe não pontua.</li>
+                </ul>
+                
+                <p class="mt-4">
+                    Cada estudante que cumprir sua participação na prova de arrecadação com a entrega de "1/2 (meio) Suplemento" e 01 (um) Kit Alimentação terá direito a um certificado com 30 horas-atividade. Na incidência de o estudante dobrar sua doação, a quantidade de horas-atividade também será dobrada até um limite de 60 horas. O Controle dos estudantes que possuem direito ao certificado deverá ser feito pelos líderes de cada curso, que deverão entregar uma lista com os nomes dos estudantes e as respectivas quantidades doadas no momento da entrega das doações.
+                </p>
+                
+                <p>
+                    Os alunos serão responsáveis pela arrecadação, controle, armazenamento prévio e entrega dos itens arrecadados. O representante da turma realizará a entrega dos itens correspondentes ao seu curso no dia 02/04/2025 (quarta-feira), das 08h00 às 10h00, na Unidade I (av. Major Nicácio, 2433), em salas definidas por sorteio. Também, deverá ser entregue uma lista dos alunos doadores para fins de controle dos certificados das horas-atividade.
+                </p>
+                
+                <h3 class="text-2xl font-bold text-gray-800 mb-4 flex items-center mt-8">
+                    <i class="fas fa-table mr-2 text-blue-500"></i> Tabela 3 – Ordem do Sorteio
+                </h3>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Cor</th>
+                                <th>Sala de Entrega</th>
+                                <th>Apresentação</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="font-semibold text-orange-500">Laranja</span></td>
+                                <td>18</td>
+                                <td>1ª Equipe</td>
+                            </tr>
+                            <tr>
+                                <td><span class="font-semibold text-gray-800">Preta</span></td>
+                                <td>19</td>
+                                <td>2ª Equipe</td>
+                            </tr>
+                            <tr>
+                                <td><span class="font-semibold text-purple-600">Roxa</span></td>
+                                <td>20</td>
+                                <td>3ª Equipe</td>
+                            </tr>
+                            <tr>
+                                <td><span class="font-semibold text-green-600">Verde</span></td>
+                                <td>21</td>
+                                <td>4ª Equipe</td>
+                            </tr>
+                            <tr>
+                                <td><span class="font-semibold text-red-600">Vermelha</span></td>
+                                <td>22</td>
+                                <td>5ª Equipe</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </section>
 
         <!-- Seção 3: Alimentos e Suplementos – Adicionais -->
-        <section class="bg-white rounded-lg shadow-sm p-6 mb-8">
-            <h2 class="text-2xl font-bold text-gray-800 mb-4"> ALIMENTOS E SUPLEMENTOS – ADICIONAIS</h2>
-            <p class="text-gray-700 mb-4">
-                As doações que excederem a meta serão pontuadas da seguinte forma:
-            </p>
-            <ul class="list-disc list-inside text-gray-700 mb-4">
-                <li>kit Alimentação............................................................... 30 pontos</li>
-                <li>Lata de suplemento conforme regulamento.................. 15 pontos</li>
-                <li>Pacote de Arroz 05 Kg..................................................... 5 pontos</li>
-                <li>Pacote de Arroz 01 Kg..................................................... 1 ponto</li>
-                <li>Pacote de Feijão 02 Kg.................................................... 2 pontos</li>
-                <li>Pacote de Feijão 01 Kg.................................................... 1 ponto</li>
-                <li>Pacote de Macarrão de 400/500 gramas......................... ½ ponto</li>
-                <li>Óleo 900 ml...................................................................... 1 ponto</li>
-            </ul>
-            <p class="text-gray-700 mb-4">
-                Também será estendida aos veteranos a emissão de certificado por doação. Para tanto, serão concedidas 20 horas atividade para cada kit de alimentos e 10 horas para cada Suplemento Alimentar doados, limitados a 60 horas no total. A listagem de controle das doações dos veteranos será disponibilizada pelo chefe do departamento ou padrinho da equipe à comissão.
-            </p>
-            <p class="text-gray-700 mb-4">
-                A doação seguirá a mesma tabela de pontuação dos alimentos adicionais acima.
-            </p>
-            <p class="text-gray-700 mb-4">
-                <strong>IMPORTANTE:</strong>
-            </p>
-            <ul class="list-disc list-inside text-gray-700 mb-4">
-                <li>Doações sem a composição do conjunto padrão podem ser pontuadas para a turma, conforme critério de itens avulsos, mas não fazem jus ao certificado de horas atividade.</li>
-                <li>Outros alimentos que não fazem parte do Kit Alimentação, como por exemplo: enlatados, produtos de higiene e limpeza, entre outros, serão encaminhados à doação, porém não pontuarão.</li>
-            </ul>
+        <section class="bg-white rounded-xl shadow-lg p-8 mb-12 card-hover">
+            <div class="flex items-center mb-6">
+                <div class="bg-blue-100 text-blue-600 p-3 rounded-full mr-4">
+                    <i class="fas fa-plus-circle text-xl"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-800"> ALIMENTOS E SUPLEMENTOS – ADICIONAIS</h2>
+            </div>
+            
+            <div class="space-y-4 text-gray-700">
+                <p>
+                    As doações que excederem a meta serão pontuadas da seguinte forma:
+                </p>
+                
+                <ul class="custom-list space-y-2">
+                    <li>kit Alimentação............................................................... 30 pontos</li>
+                    <li>Lata de suplemento conforme regulamento.................. 15 pontos</li>
+                    <li>Pacote de Arroz 05 Kg..................................................... 5 pontos</li>
+                    <li>Pacote de Arroz 01 Kg..................................................... 1 ponto</li>
+                    <li>Pacote de Feijão 02 Kg.................................................... 2 pontos</li>
+                    <li>Pacote de Feijão 01 Kg.................................................... 1 ponto</li>
+                    <li>Pacote de Macarrão de 400/500 gramas......................... ½ ponto</li>
+                    <li>Óleo 900 ml...................................................................... 1 ponto</li>
+                </ul>
+                
+                <p>
+                    Também será estendida aos veteranos a emissão de certificado por doação. Para tanto, serão concedidas 20 horas atividade para cada kit de alimentos e 10 horas para cada Suplemento Alimentar doados, limitados a 60 horas no total. A listagem de controle das doações dos veteranos será disponibilizada pelo chefe do departamento ou padrinho da equipe à comissão.
+                </p>
+                
+                <p>
+                    A doação seguirá a mesma tabela de pontuação dos alimentos adicionais acima.
+                </p>
+                
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-exclamation-triangle text-yellow-400"></i>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-yellow-700 font-semibold">
+                                IMPORTANTE:
+                            </p>
+                            <ul class="custom-list mt-2 space-y-1">
+                                <li>Doações sem a composição do conjunto padrão podem ser pontuadas para a turma, conforme critério de itens avulsos, mas não fazem jus ao certificado de horas atividade.</li>
+                                <li>Outros alimentos que não fazem parte do Kit Alimentação, como por exemplo: enlatados, produtos de higiene e limpeza, entre outros, serão encaminhados à doação, porém não pontuarão.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- Seção 4: Campanha do Leite -->
-        <section class="bg-white rounded-lg shadow-sm p-6 mb-8">
-            <h2 class="text-2xl font-bold text-gray-800 mb-4"> CAMPANHA DO LEITE – 2 pontos por litro</h2>
-            <p class="text-gray-700 mb-4">
-                Este ano estamos arrecadando litros de leite longa vida, UHT (Integral, Semidesnatado ou Desnatado), para compor as doações do Trote Solidário 2025.
-            </p>
-            <p class="text-gray-700 mb-4">
-                Serão concedidos à equipe 2 pontos por cada litro de leite doado.
-            </p>
-            <p class="text-gray-700 mb-4">
-                <strong>ATENÇÃO:</strong> Para ser computada a doação o Leite deverá possuir data de vencimento posterior a 02 de junho de 2025.
-            </p>
+        <section class="bg-white rounded-xl shadow-lg p-8 mb-12 card-hover">
+            <div class="flex items-center mb-6">
+                <div class="bg-blue-100 text-blue-600 p-3 rounded-full mr-4">
+                    <i class="fas fa-wine-bottle text-xl"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-800"> CAMPANHA DO LEITE – 2 pontos por litro</h2>
+            </div>
+            
+            <div class="space-y-4 text-gray-700">
+                <p>
+                    Este ano estamos arrecadando litros de leite longa vida, UHT (Integral, Semidesnatado ou Desnatado), para compor as doações do Trote Solidário 2025.
+                </p>
+                
+                <p>
+                    Serão concedidos à equipe 2 pontos por cada litro de leite doado.
+                </p>
+                
+                <div class="bg-red-50 border-l-4 border-red-400 p-4">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-exclamation-circle text-red-400"></i>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-red-700">
+                                <strong>ATENÇÃO:</strong> Para ser computada a doação o Leite deverá possuir data de vencimento posterior a 02 de junho de 2025.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- Seção 5: Doação de Sangue -->
-        <section class="bg-white rounded-lg shadow-sm p-6 mb-8">
-            <h2 class="text-2xl font-bold text-gray-800 mb-4"> DOAÇÃO DE SANGUE</h2>
-            <p class="text-gray-700 mb-4">
-                A meta de doação de sangue no Trote Solidário 2025 corresponde a uma doação para cada dois estudantes da equipe, e será pontuada da seguinte forma:
-            </p>
-            <ul class="list-disc list-inside text-gray-700 mb-4">
-                <li>Cumprimento da meta: 2.500 pontos</li>
-                <li>Doação adicional (superando a meta): 20 pontos por doação</li>
-                <li>Pontuação da equipe que não atingir a meta: 20 pontos por doação</li>
-            </ul>
-            <h3 class="text-xl font-bold text-gray-800 mb-4">Tabela 4 – Metas proporcionais de doações de sangue</h3>
-            <div class="overflow-x-auto">
-                <table class="w-full border-collapse border border-gray-300 mb-4">
-                    <thead class="bg-gray-200">
-                        <tr>
-                            <th class="border border-gray-300 p-2">Cor</th>
-                            <th class="border border-gray-300 p-2">Meta</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="border border-gray-300 p-2">Laranja</td>
-                            <td class="border border-gray-300 p-2">49</td>
-                        </tr>
-                        <tr>
-                            <td class="border border-gray-300 p-2">Preta</td>
-                            <td class="border border-gray-300 p-2">52</td>
-                        </tr>
-                        <tr>
-                            <td class="border border-gray-300 p-2">Roxa</td>
-                            <td class="border border-gray-300 p-2">51</td>
-                        </tr>
-                        <tr>
-                            <td class="border border-gray-300 p-2">Verde</td>
-                            <td class="border border-gray-300 p-2">44</td>
-                        </tr>
-                        <tr>
-                            <td class="border border-gray-300 p-2">Vermelha</td>
-                            <td class="border border-gray-300 p-2">47</td>
-                        </tr>
-                    </tbody>
-                </table>
+        <section class="bg-white rounded-xl shadow-lg p-8 mb-12 card-hover">
+            <div class="flex items-center mb-6">
+                <div class="bg-blue-100 text-blue-600 p-3 rounded-full mr-4">
+                    <i class="fas fa-tint text-xl"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-800"> DOAÇÃO DE SANGUE</h2>
             </div>
-            <p class="text-gray-700 mb-4">
-                * conforme sorteio realizado em 18/02/2025
-            </p>
-            <p class="text-gray-700 mb-4">
-                Para comprovar a doação o doador deverá solicitar um cartão do Hemocentro com carimbo do Trote Solidário e assinatura. Os comprovantes deverão ser entregues no momento da entrega dos demais itens no dia 02/04/2025, das 08h00 às 10h00 na Unidade I do Uni-FACEF.
-            </p>
+            
+            <div class="space-y-4 text-gray-700">
+                <p>
+                    A meta de doação de sangue no Trote Solidário 2025 corresponde a uma doação para cada dois estudantes da equipe, e será pontuada da seguinte forma:
+                </p>
+                
+                <ul class="custom-list space-y-2">
+                    <li>Cumprimento da meta: 2.500 pontos</li>
+                    <li>Doação adicional (superando a meta): 20 pontos por doação</li>
+                    <li>Pontuação da equipe que não atingir a meta: 20 pontos por doação</li>
+                </ul>
+                
+                <h3 class="text-2xl font-bold text-gray-800 mb-4 flex items-center mt-8">
+                    <i class="fas fa-table mr-2 text-blue-500"></i> Tabela 4 – Metas proporcionais de doações de sangue
+                </h3>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Cor</th>
+                                <th>Meta</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="font-semibold text-orange-500">Laranja</span></td>
+                                <td>49</td>
+                            </tr>
+                            <tr>
+                                <td><span class="font-semibold text-gray-800">Preta</span></td>
+                                <td>52</td>
+                            </tr>
+                            <tr>
+                                <td><span class="font-semibold text-purple-600">Roxa</span></td>
+                                <td>51</td>
+                            </tr>
+                            <tr>
+                                <td><span class="font-semibold text-green-600">Verde</span></td>
+                                <td>44</td>
+                            </tr>
+                            <tr>
+                                <td><span class="font-semibold text-red-600">Vermelha</span></td>
+                                <td>47</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <p class="text-gray-500 text-sm">
+                    * conforme sorteio realizado em 18/02/2025
+                </p>
+                
+                <p>
+                    Para comprovar a doação o doador deverá solicitar um cartão do Hemocentro com carimbo do Trote Solidário e assinatura. Os comprovantes deverão ser entregues no momento da entrega dos demais itens no dia 02/04/2025, das 08h00 às 10h00 na Unidade I do Uni-FACEF.
+                </p>
+            </div>
         </section>
 
         <!-- Seção 6: Ação Social em Entidades de Franca/SP -->
-        <section class="bg-white rounded-lg shadow-sm p-6 mb-8">
-            <h2 class="text-2xl font-bold text-gray-800 mb-4"> AÇÃO SOCIAL EM ENTIDADES DE FRANCA/SP</h2>
-            <p class="text-gray-700 mb-4">
-                O município de Franca conta com uma grande quantidade de programas, projetos, ações e instituições na área social. No cenário atual, em que os efeitos da pandemia ainda afetam de forma intensa a sociedade, estas instituições também enfrentam problemas e dificuldades de diversas naturezas, que vão além da questão financeira.
-            </p>
-            <p class="text-gray-700 mb-4">
-                Esta atividade tem como objetivo principal levar os novos estudantes universitários do Uni-FACEF a se aproximar dos programas sociais, buscando conhecer seu trabalho, identificar as dificuldades enfrentadas no cenário atual e desenvolver formas criativas de ajudá-los.
-            </p>
-            <p class="text-gray-700 mb-4">
-                Assim, caberá aos alunos da equipe desenvolver uma ação em uma entidade a ser definida pela equipe.
-            </p>
-            <p class="text-gray-700 mb-4">
-                <strong>ATENÇÃO:</strong>
-            </p>
-            <ul class="list-disc list-inside text-gray-700 mb-4">
-                <li>A entidade escolhida pela equipe deverá ser informada à comissão organizadora do Trote Solidário para fins de validação por meio do grupo do whatsapp de Líderes, pois serão admitidas até 2 (duas) entidades do mesmo seguimento.</li>
-                <li>A data limite para comunicar a escolha à comissão é 28/02/2025. Ressalta-se que, o quanto antes for feita a comunicação, maior a chance do seguimento ainda estar disponível.</li>
-            </ul>
-            <p class="text-gray-700 mb-4">
-                Dentre os seguimentos de entidades que podem ser escolhidas, alguns exemplos são: creche, lar de idosos, entidade que trabalha com deficientes visuais ou autistas, entidade que trabalha com pacientes com câncer, entidade que trabalha com portadores de necessidades especiais, e outras.
-            </p>
-            <p class="text-gray-700 mb-4">
-                A Equipe deverá entregar no dia 02/04/2025, das 08h00 às 10h00 na Unidade I do Uni-FACEF um pendrive, contendo:
-            </p>
-            <ul class="list-disc list-inside text-gray-700 mb-4">
-                <li>Um relatório, de até 5 páginas, descrevendo:</li>
-                <ul class="list-disc list-inside ml-6">
-                    <li>cor da equipe</li>
-                    <li>nomes/curso/semestre dos participantes envolvidos (calouros e veteranos)</li>
-                    <li>datas e os locais de realização</li>
-                    <li>apresentação da Entidade</li>
-                    <li>objetivo da ação</li>
-                    <li>detalhes da execução</li>
-                    <li>resultados obtidos</li>
+        <section class="bg-white rounded-xl shadow-lg p-8 mb-12 card-hover">
+            <div class="flex items-center mb-6">
+                <div class="bg-blue-100 text-blue-600 p-3 rounded-full mr-4">
+                    <i class="fas fa-hands-helping text-xl"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-800"> AÇÃO SOCIAL EM ENTIDADES DE FRANCA/SP</h2>
+            </div>
+            
+            <div class="space-y-4 text-gray-700">
+                <p>
+                    O município de Franca conta com uma grande quantidade de programas, projetos, ações e instituições na área social. No cenário atual, em que os efeitos da pandemia ainda afetam de forma intensa a sociedade, estas instituições também enfrentam problemas e dificuldades de diversas naturezas, que vão além da questão financeira.
+                </p>
+                
+                <p>
+                    Esta atividade tem como objetivo principal levar os novos estudantes universitários do Uni-FACEF a se aproximar dos programas sociais, buscando conhecer seu trabalho, identificar as dificuldades enfrentadas no cenário atual e desenvolver formas criativas de ajudá-los.
+                </p>
+                
+                <p>
+                    Assim, caberá aos alunos da equipe desenvolver uma ação em uma entidade a ser definida pela equipe.
+                </p>
+                
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-exclamation-triangle text-yellow-400"></i>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-yellow-700 font-semibold">
+                                ATENÇÃO:
+                            </p>
+                            <ul class="custom-list mt-2 space-y-1">
+                                <li>A entidade escolhida pela equipe deverá ser informada à comissão organizadora do Trote Solidário para fins de validação por meio do grupo do whatsapp de Líderes, pois serão admitidas até 2 (duas) entidades do mesmo seguimento.</li>
+                                <li>A data limite para comunicar a escolha à comissão é 28/02/2025. Ressalta-se que, o quanto antes for feita a comunicação, maior a chance do seguimento ainda estar disponível.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <p>
+                    Dentre os seguimentos de entidades que podem ser escolhidas, alguns exemplos são: creche, lar de idosos, entidade que trabalha com deficientes visuais ou autistas, entidade que trabalha com pacientes com câncer, entidade que trabalha com portadores de necessidades especiais, e outras.
+                </p>
+                
+                <p>
+                    A Equipe deverá entregar no dia 02/04/2025, das 08h00 às 10h00 na Unidade I do Uni-FACEF um pendrive, contendo:
+                </p>
+                
+                <ul class="custom-list space-y-2">
+                    <li>Um relatório, de até 5 páginas, descrevendo:</li>
+                    <ul class="custom-list ml-6 space-y-1">
+                        <li>cor da equipe</li>
+                        <li>nomes/curso/semestre dos participantes envolvidos (calouros e veteranos)</li>
+                        <li>datas e os locais de realização</li>
+                        <li>apresentação da Entidade</li>
+                        <li>objetivo da ação</li>
+                        <li>detalhes da execução</li>
+                        <li>resultados obtidos</li>
+                    </ul>
+                    <li>Material audiovisual (ver critérios na prova de REGISTRO AUDIOVISUAL pg. 09)</li>
                 </ul>
-                <li>Material audiovisual (ver critérios na prova de REGISTRO AUDIOVISUAL pg. 09)</li>
-            </ul>
-            <p class="text-gray-700 mb-4">
-                Pontuação desta atividade = 1.500 pontos*
-            </p>
-            <p class="text-gray-700 mb-4">
-                * A comprovação da atividade para fazer jus à pontuação está condicionada ao envio de fotos/vídeos no pendrive.
-            </p>
-            <p class="text-gray-700 mb-4">
-                A ação deverá contar com, no mínimo, 8 estudantes. Dentre eles:
-            </p>
-            <ul class="list-disc list-inside text-gray-700 mb-4">
-                <li>Ao menos um representante calouro de cada curso;</li>
-                <li>Ao menos representante veterano de cada curso.</li>
-            </ul>
-            <p class="text-gray-700 mb-4">
-                Obs.: o número de calouros deve ser superior ao número de veteranos participando.
-            </p>
-            <p class="text-gray-700 mb-4">
-                A equipe deverá também se preparar para apresentar para os jurados esta ação, em até 4 minutos, no dia do encerramento. O template para elaboração dos slides estará disponível no site do Uni-FACEF junto a este regulamento.
-            </p>
+                
+                <p class="font-semibold">
+                    Pontuação desta atividade = 1.500 pontos*
+                </p>
+                
+                <p class="text-sm text-gray-600">
+                    * A comprovação da atividade para fazer jus à pontuação está condicionada ao envio de fotos/vídeos no pendrive.
+                </p>
+                
+                <p>
+                    A ação deverá contar com, no mínimo, 8 estudantes. Dentre eles:
+                </p>
+                
+                <ul class="custom-list space-y-2">
+                    <li>Ao menos um representante calouro de cada curso;</li>
+                    <li>Ao menos representante veterano de cada curso.</li>
+                </ul>
+                
+                <p class="text-sm text-gray-600">
+                    Obs.: o número de calouros deve ser superior ao número de veteranos participando.
+                </p>
+                
+                <p>
+                    A equipe deverá também se preparar para apresentar para os jurados esta ação, em até 4 minutos, no dia do encerramento. O template para elaboração dos slides estará disponível no site do Uni-FACEF junto a este regulamento.
+                </p>
+            </div>
         </section>
 
         <!-- Seção 7: Registro Audiovisual da 1ª Etapa -->
-        <section class="bg-white rounded-lg shadow-sm p-6 mb-8">
-            <h2 class="text-2xl font-bold text-gray-800 mb-4"> REGISTRO AUDIOVISUAL DA 1ª ETAPA</h2>
-            <p class="text-gray-700 mb-4">
-                As equipes deverão entregar registros da realização da PRIMEIRA ETAPA, por meio de fotos e vídeos da arrecadação de alimentos e suplementos, das doações de sangue e da ação social. Esse material será utilizado para fins de documentação e acervo do Uni-FACEF e deverá ser entregue no dia 02/04/2025, das 8h às 10h00, na Unidade I, no mesmo pendrive do relatório da ação social.
-            </p>
-            <h3 class="text-xl font-bold text-gray-800 mb-4">META PONTUAÇÃO</h3>
-            <div class="overflow-x-auto">
-                <table class="w-full border-collapse border border-gray-300 mb-4">
-                    <thead class="bg-gray-200">
-                        <tr>
-                            <th class="border border-gray-300 p-2">PASTA 1: FOTOS E VÍDEOS DA ARRECADAÇÃO DE ALIMENTOS E SUPLEMENTOS + DOAÇÃO DE SANGUE</th>
-                            <th class="border border-gray-300 p-2">1000 pts</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="border border-gray-300 p-2">1) mín. 30 fotos de arrecadações</td>
-                            <td class="border border-gray-300 p-2"></td>
-                        </tr>
-                        <tr>
-                            <td class="border border-gray-300 p-2">2) mín 05 fotos de doações de sangue</td>
-                            <td class="border border-gray-300 p-2"></td>
-                        </tr>
-                        <tr>
-                            <td class="border border-gray-300 p-2">3) mín. 2 vídeos (um na horizontal e outro da vertical)</td>
-                            <td class="border border-gray-300 p-2"></td>
-                        </tr>
-                    </tbody>
-                </table>
+        <section class="bg-white rounded-xl shadow-lg p-8 mb-12 card-hover">
+            <div class="flex items-center mb-6">
+                <div class="bg-blue-100 text-blue-600 p-3 rounded-full mr-4">
+                    <i class="fas fa-camera text-xl"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-800"> REGISTRO AUDIOVISUAL DA 1ª ETAPA</h2>
             </div>
-            <div class="overflow-x-auto">
-                <table class="w-full border-collapse border border-gray-300 mb-4">
-                    <thead class="bg-gray-200">
-                        <tr>
-                            <th class="border border-gray-300 p-2">PASTA 2: FOTOS E VÍDEOS DA AÇÃO NA ENTIDADE SOCIAL</th>
-                            <th class="border border-gray-300 p-2">500 pts</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="border border-gray-300 p-2">1) mín. 15 fotos</td>
-                            <td class="border border-gray-300 p-2"></td>
-                        </tr>
-                        <tr>
-                            <td class="border border-gray-300 p-2">2) mín 2 vídeos (um na horizontal e outro da vertical)</td>
-                            <td class="border border-gray-300 p-2"></td>
-                        </tr>
-                    </tbody>
-                </table>
+            
+            <div class="space-y-4 text-gray-700">
+                <p>
+                    As equipes deverão entregar registros da realização da PRIMEIRA ETAPA, por meio de fotos e vídeos da arrecadação de alimentos e suplementos, das doações de sangue e da ação social. Esse material será utilizado para fins de documentação e acervo do Uni-FACEF e deverá ser entregue no dia 02/04/2025, das 8h às 10h00, na Unidade I, no mesmo pendrive do relatório da ação social.
+                </p>
+                
+                <h3 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+                    <i class="fas fa-star mr-2 text-yellow-500"></i> META PONTUAÇÃO
+                </h3>
+                
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>PASTA 1: FOTOS E VÍDEOS DA ARRECADAÇÃO DE ALIMENTOS E SUPLEMENTOS + DOAÇÃO DE SANGUE</th>
+                                <th>1000 pts</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1) mín. 30 fotos de arrecadações</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>2) mín 05 fotos de doações de sangue</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>3) mín. 2 vídeos (um na horizontal e outro da vertical)</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>PASTA 2: FOTOS E VÍDEOS DA AÇÃO NA ENTIDADE SOCIAL</th>
+                                <th>500 pts</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1) mín. 15 fotos</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>2) mín 2 vídeos (um na horizontal e outro da vertical)</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <p>
+                     Fotos deverão ser salvas em formato jpeg/heic/png com resolução, no mínimo, de 1080x1920 (FullHD) .
+                </p>
+                
+                <p>
+                     Vídeos deverão ser salvos em formato mp4 com resolução em 4k no formato 16:9 (horizontal) ou 9:16 (vertical).
+                </p>
             </div>
-            <p class="text-gray-700 mb-4">
-                 Fotos deverão ser salvas em formato jpeg/heic/png com resolução, no mínimo, de 1080x1920 (FullHD) .
-            </p>
-            <p class="text-gray-700 mb-4">
-                 Vídeos deverão ser salvos em formato mp4 com resolução em 4k no formato 16:9 (horizontal) ou 9:16 (vertical).
-            </p>
         </section>
     </div>
+
+    <!-- Rodapé -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center">
+                        <img src="/assets/images/trote.jpg" alt="Trote Solidário" class="w-10 h-10 rounded-lg mr-3">
+                        <span class="text-xl font-bold">Uni-FACEF | Trote Solidário 2025</span>
+                    </div>
+                    <p class="text-gray-400 mt-2">Construa vitórias fora de campo e jogue pela solidariedade</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white text-2xl">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white text-2xl">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white text-2xl">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white text-2xl">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2025 Uni-FACEF. Todos os direitos reservados.</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Política de Privacidade</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Termos de Uso</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Contato</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
