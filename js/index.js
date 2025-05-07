@@ -44,7 +44,6 @@ function resetarCalculadora() {
     });
 }
 
-// Event listeners para inputs numéricos
 document.querySelectorAll('input[type="number"]').forEach(input => {
     input.addEventListener('input', function() {
         const max = parseInt(this.max) || 100;
@@ -56,7 +55,6 @@ document.querySelectorAll('input[type="number"]').forEach(input => {
         if (progressElement) {
             progressElement.style.width = percentage + '%';
             
-            // Mudar cor conforme preenchimento
             if (percentage < 30) {
                 progressElement.className = 'progress-fill bg-red-500';
             } else if (percentage < 70) {
